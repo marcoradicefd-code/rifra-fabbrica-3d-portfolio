@@ -1,0 +1,34 @@
+<!doctype html>
+<!-- Banco di prova delle macchine (reparti.js + macchine.js) senza l'edificio: primi piani dai punti di ripresa delle foto.
+     Uso: node controlli/banco-macchine.js (vedi quel file). Pavimento grigio, pareti antracite come in produzione. -->
+<html><head><meta charset="utf-8"><title>Banco macchine</title>
+<style>html,body{margin:0;background:#3a3c40}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"../../vendor/three/three.module.min.js","three/addons/":"../../vendor/three/addons/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { creaMateriali } from '../../../3d/js/materiali.js';
+import { costruisciReparti } from '../../../3d/js/reparti.js';
+import { fondiStatici, fondiAnimati, campiona, istanziaPersone } from '../../../3d/js/prim.js';
+const q = new URLSearchParams(location.search), W = +(q.get('w') || 1000), H = +(q.get('h') || 750);
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true }); renderer.setSize(W, H); document.body.appendChild(renderer.domElement);
+renderer.outputColorSpace = THREE.SRGBColorSpace; renderer.toneMapping = THREE.NeutralToneMapping; renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFShadowMap;
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x2e3034);
+scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), .04).texture; scene.environmentIntensity = .55;
+scene.add(new THREE.HemisphereLight(0xdfe8f2, 0x8a8478, 1.1));
+const sole = new THREE.DirectionalLight(0xfff4e6, 1.6); sole.position.set(20, 40, 30); sole.castShadow = true; sole.shadow.mapSize.set(4096, 4096);
+Object.assign(sole.shadow.camera, { left: -45, right: 45, top: 30, bottom: -30, near: 1, far: 150 }); sole.target.position.set(38, 0, 22); scene.add(sole, sole.target);
+const pav = new THREE.Mesh(new THREE.PlaneGeometry(90, 50), new THREE.MeshStandardMaterial({ color: 0x8f8d88, roughness: .85 })); pav.rotation.x = -Math.PI / 2; pav.position.set(35, 0, 20); pav.receiveShadow = true; scene.add(pav);
+// pareti antracite del perimetro (solo per dare lo sfondo delle foto)
+const par = new THREE.MeshStandardMaterial({ color: 0x3a3c40, roughness: .9 });
+for (const [x, z, w, d] of [[0, 40.6, 71, .2], [70.9, 5, .2, 36], [0, 13, 71, .2], [5.3, 13, .2, 28]]) { const m = new THREE.Mesh(new THREE.BoxGeometry(w, 7.2, d), par); m.position.set(x + w / 2, 3.6, z + d / 2); m.receiveShadow = true; scene.add(m); }
+const M = creaMateriali(); const REP = costruisciReparti(scene, M);
+const agg = t => REP.update.forEach(u => u(t));
+const CAMP = campiona(scene, agg, 40); REP.gruppi.forEach(g => fondiStatici(g, { mutabili: CAMP.mutabili })); fondiAnimati(scene, CAMP);
+const persone = istanziaPersone(scene); if (q.has('nopersone')) scene.children.forEach(o => { if (o.isInstancedMesh) o.visible = false; });
+const cam = new THREE.PerspectiveCamera(50, W / H, .05, 300);
+window.vista = (px, py, pz, tx, ty, tz, fovH, t) => { cam.fov = 2 * Math.atan(Math.tan(fovH * Math.PI / 360) * H / W) * 180 / Math.PI; cam.updateProjectionMatrix();
+  cam.position.set(px, py, pz); cam.lookAt(tx, ty, tz); agg(t); scene.updateMatrixWorld(true); persone(); renderer.info.reset(); renderer.render(scene, cam); return renderer.info.render.calls; };
+window.pronto = true;
+</script></body></html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<!-- Motion graphic dello spot RiFRA (1920 × 1080, fondo trasparente), sovrapposta al render di Blender da monta_spot.sh.
+     Ogni fotogramma è funzione pura del tempo: window.vai(t) (niente timer né transizioni CSS) — tecnica 2 di ricerca/VIDEO-CON-CLAUDE-OPUS.md.
+     Griglia dei battiti: 85 BPM misurati sulla musica, battito 0 sulla ripartenza a 16,5 s (musica da 2:16,0). Le entrate cadono sui battiti.
+     Design system RiFRA: Instrument Serif (titoli, numeri), Newsreader (testi), bianco su velo nero leggero, grigio #A8A6A1, niente arancione,
+     niente monospace. Elementi: logo che si disegna (apertura e chiusura), titoli con maschera e riga sul battito, indicatore dei passaggi,
+     contatore «4 ante per ciclo» (stima, ricerca/CAPACITA-VERNICIATURA.md), dissolvenza dal nero. Callout sulle macchine: callout.json (se c'è). -->
+<html lang="it"><head><meta charset="utf-8">
+<style>
+@font-face { font-family: 'Instrument Serif'; src: url(../../build/fonts/InstrumentSerif_latin_n3.woff2) format('woff2'); font-style: normal; }
+@font-face { font-family: 'Instrument Serif'; src: url(../../build/fonts/InstrumentSerif_latin_i1.woff2) format('woff2'); font-style: italic; }
+@font-face { font-family: 'Newsreader'; src: url(../../build/fonts/Newsreader_latin_n7.woff2) format('woff2'); font-weight: 200 800; }
+html, body { margin: 0; width: 1920px; height: 1080px; background: transparent; overflow: hidden; color: #fff; }
+.abs { position: absolute; }
+.mask { overflow: hidden; display: block; padding-bottom: .08em; }
+.mask > span { display: inline-block; will-change: transform; }
+.velo-bl { left: 0; bottom: 0; width: 1100px; height: 420px; background: radial-gradient(110% 100% at 0% 100%, rgba(0,0,0,.46), rgba(0,0,0,0) 72%); }
+.terzo { left: 112px; bottom: 112px; }
+.riga { width: 72px; height: 2px; background: #fff; margin-bottom: 24px; transform-origin: left; }
+.titolo { font: 400 82px/1 'Instrument Serif', serif; letter-spacing: -.6px; }
+.sotto { font: 300 27px/1.3 'Newsreader', serif; letter-spacing: .4px; margin-top: 14px; color: rgba(255,255,255,.9); }
+#passi { right: 112px; top: 92px; text-align: right; }
+#passi .num { font: 400 40px/1 'Instrument Serif', serif; letter-spacing: .5px; }
+#passi .num i { font-style: normal; color: #A8A6A1; }
+#passi .tacche { display: flex; gap: 6px; justify-content: flex-end; margin-top: 12px; }
+#passi .tacche b { width: 22px; height: 2px; background: rgba(168,166,161,.55); transform-origin: left; }
+#conta { right: 150px; top: 50%; transform: translateY(-50%); text-align: right; }
+#conta .velo { position: absolute; right: -150px; top: -260px; width: 900px; height: 760px; z-index: -1; background: radial-gradient(60% 55% at 85% 50%, rgba(0,0,0,.42), rgba(0,0,0,0) 70%); }
+#conta .n { font: 400 260px/.82 'Instrument Serif', serif; letter-spacing: -4px; }
+#conta .lab { font: 400 44px/1.05 'Instrument Serif', serif; margin-top: 18px; }
+#conta .fonte { font: 300 22px/1.3 'Newsreader', serif; color: rgba(255,255,255,.75); margin-top: 10px; }
+#apre, #chiude { inset: 0; display: grid; place-content: center; text-align: center; }
+#chiude .velo, #apre .velo { position: absolute; inset: 0; z-index: -1; }
+#chiude .velo { background: radial-gradient(75% 75% at 50% 50%, rgba(0,0,0,.62), rgba(0,0,0,.4)); }
+#apre .velo { background: radial-gradient(55% 45% at 50% 50%, rgba(0,0,0,.38), rgba(0,0,0,0)); }
+.logo svg { width: 560px; height: auto; display: block; margin: 0 auto; overflow: visible; }
+.logo path { fill: #fff; stroke: #fff; stroke-width: 2.4; }
+#apre .sotto, #chiude .sotto { margin-top: 26px; font-size: 30px; letter-spacing: 3px; }
+#apre .sotto { margin-top: 54px; }
+#chiude .titolo { font-size: 66px; margin-top: 34px; }
+#nero { inset: 0; background: #000; }
+</style></head>
+<body>
+<div id="terzi"></div>
+<div id="passi" class="abs"><div class="num"></div><div class="tacche"></div></div>
+<div id="conta" class="abs"><div class="velo"></div><div class="mask"><span class="n">0</span></div><div class="mask"><span class="lab">ante per ciclo</span></div><div class="mask"><span class="fonte">Cefla Spraybotic · carico</span></div></div>
+<div id="apre" class="abs"><div class="velo"></div><div class="logo"></div><div class="sotto"></div></div>
+<div id="chiude" class="abs"><div class="velo"></div><div class="logo"></div><div class="mask"><span class="titolo"></span></div><div class="mask"><span class="sotto"></span></div></div>
+<div id="nero" class="abs"></div>
+<script>
+const BPM = 85, B0 = 16.5, BT = 60 / BPM;
+const batt = t => B0 + Math.ceil((t - B0) / BT - 1e-6) * BT;           // primo battito ≥ t
+const cl = (u) => u < 0 ? 0 : u > 1 ? 1 : u;
+const expoOut = u => u >= 1 ? 1 : 1 - Math.pow(2, -10 * cl(u));
+const inOut = u => { u = cl(u); return u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; };
+// molla in forma chiusa, piccolo overshoot (≈ 6 %)
+const molla = u => { u = Math.max(0, u); return u >= 1.6 ? 1 : 1 - Math.exp(-6 * u) * Math.cos(7.5 * u); };
+let SHOT = [], PASSI = [], tracciati = [];
+function costruisciLogo(el, svg) { el.innerHTML = svg; const ps = [...el.querySelectorAll('path')];
+  return ps.map(p => { const L = p.getTotalLength(); p.style.strokeDasharray = L; return { p, L }; }); }
+function logoA(ps, u, riemp) { ps.forEach(({ p, L }, i) => { const v = cl(u * 1.35 - i * .035);
+  p.style.strokeDashoffset = L * (1 - inOut(v)); p.style.fillOpacity = cl(riemp); p.style.strokeOpacity = 1 - .6 * cl(riemp); }); }
+async function prepara(shot, logoSvg) {
+  SHOT = shot; await document.fonts.ready;
+  const T = document.getElementById('terzi');
+  SHOT.forEach((s, i) => { if (!s.titolo || i === 0 || i === SHOT.length - 1) return; PASSI.push(i);
+    const d = document.createElement('div'); d.className = 'abs'; d.dataset.i = i; d.style.inset = '0';
+    d.innerHTML = `<div class="abs velo-bl"></div><div class="abs terzo"><div class="riga"></div><div class="mask"><span class="titolo"></span></div><div class="mask"><span class="sotto"></span></div></div>`;
+    d.querySelector('.titolo').textContent = s.titolo; d.querySelector('.sotto').textContent = s.sotto; T.appendChild(d); });
+  const tc = document.querySelector('#passi .tacche'); PASSI.forEach(() => tc.appendChild(document.createElement('b')));
+  tracciati = [costruisciLogo(document.querySelector('#apre .logo'), logoSvg), costruisciLogo(document.querySelector('#chiude .logo'), logoSvg)];
+  document.querySelector('#apre .sotto').textContent = SHOT[0].sotto;
+  const u = SHOT[SHOT.length - 1]; document.querySelector('#chiude .titolo').textContent = u.titolo; document.querySelector('#chiude .sotto').textContent = u.sotto;
+  await document.fonts.ready; return PASSI.length;
+}
+const maschera = (span, u) => { span.style.transform = `translateY(${(1 - u) * 110}%)`; };
+window.vai = t => {
+  // titoli in basso: entrano sul primo battito dopo t0 + 0,2 s, escono 0,45 s prima del taglio
+  document.querySelectorAll('#terzi > div').forEach(d => { const s = SHOT[+d.dataset.i], ti = Math.min(batt(s.t0 + .2), s.t0 + .6), tu = s.t1 - .45;
+    const a = t - ti, ent = expoOut(a / .7), usc = cl((t - tu) / .35), on = t >= ti - .01 && t < s.t1;
+    d.style.display = on ? 'block' : 'none'; if (!on) return;
+    d.querySelector('.velo-bl').style.opacity = cl(a / .5) * (1 - usc);
+    d.querySelector('.riga').style.transform = `scaleX(${expoOut((a - .05) / .55) * (1 - usc)})`;
+    maschera(d.querySelector('.titolo'), expoOut((a - .12) / .7) - usc * 1.1);
+    maschera(d.querySelector('.sotto'), expoOut((a - .3) / .7) - usc * 1.1); });
+  // indicatore dei passaggi
+  const P = document.getElementById('passi'), k = PASSI.findLastIndex(i => t >= SHOT[i].t0), primo = SHOT[PASSI[0]].t0, fine = SHOT[SHOT.length - 1].t0;
+  P.style.opacity = cl((t - primo - .2) / .5) * (1 - cl((t - fine + .5) / .5));
+  if (k >= 0) { P.querySelector('.num').innerHTML = `${String(k + 1).padStart(2, '0')} <i>/ ${String(PASSI.length).padStart(2, '0')}</i>`;
+    const ts = SHOT[PASSI[k]].t0; [...P.querySelectorAll('b')].forEach((b, j) => { b.style.background = j < k ? '#fff' : j === k ? '#fff' : 'rgba(168,166,161,.55)';
+      b.style.transform = j === k ? `scaleX(${expoOut((t - ts) / .6)})` : 'none'; }); }
+  // contatore sul carico della Cefla (inquadratura senza titolo dopo «Laccato in casa»)
+  const C = document.getElementById('conta'), ic = SHOT.findIndex((s, i) => i > 0 && SHOT[i - 1].titolo === 'Laccato in casa' && !s.titolo);
+  if (ic > 0) { const s = SHOT[ic], ti = batt(s.t0 + .1), a = t - ti, usc = cl((t - (s.t1 - .45)) / .35), on = t >= s.t0 && t < s.t1;
+    C.style.display = on ? 'block' : 'none';
+    if (on) { const n = Math.max(0, Math.min(4, Math.floor((t - ti) / BT) + 1)); C.querySelector('.n').textContent = a < 0 ? '0' : String(n);
+      C.querySelector('.velo').style.opacity = cl(a / .4) * (1 - usc);
+      maschera(C.querySelector('.n'), molla(a / .8) - usc * 1.1); maschera(C.querySelector('.lab'), expoOut((a - .25) / .7) - usc * 1.1);
+      maschera(C.querySelector('.fonte'), expoOut((a - .4) / .7) - usc * 1.1); } }
+  // apertura: il logo si disegna (0,5–2,3 s), si riempie sul pieno, il sottotitolo sale; esce prima del taglio
+  const A = document.getElementById('apre'), s0 = SHOT[0], ua = cl((t - (s0.t1 - .9)) / .6);
+  A.style.opacity = 1 - ua; A.style.transform = `scale(${1 + .04 * inOut(ua)})`;
+  logoA(tracciati[0], (t - .5) / 1.8, (t - 2.0) / .5); A.querySelector('.velo').style.opacity = cl((t - .3) / .8);
+  const sa = A.querySelector('.sotto'); sa.style.opacity = expoOut((t - 2.4) / .8); sa.style.transform = `translateY(${(1 - expoOut((t - 2.4) / .8)) * 16}px)`;
+  // chiusura: velo, logo che si disegna, poi titolo e sito con la maschera
+  const Z = document.getElementById('chiude'), uz = SHOT[SHOT.length - 1], tz = batt(uz.t0 + 1.0), z = t - tz;
+  Z.style.opacity = cl(z / .6); logoA(tracciati[1], z / 1.6, (z - 1.5) / .4);
+  maschera(Z.querySelector('.titolo'), expoOut((z - 1.9) / .8)); maschera(Z.querySelector('.sotto'), expoOut((z - 2.2) / .8));
+  // dissolvenza dal nero
+  document.getElementById('nero').style.opacity = 1 - inOut(t / .6);
+  return true;
+};
+</script>
+</body></html>

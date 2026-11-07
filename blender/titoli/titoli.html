@@ -1,0 +1,54 @@
+<!doctype html>
+<!-- Titoli dello spot RiFRA, 1920 × 1080 su fondo trasparente. build/tools/blender/titoli.js chiama window.vai(t) per ogni fotogramma
+     e salva un PNG trasparente; ffmpeg li sovrappone al render di Blender (monta_spot.sh). Design system RiFRA: Instrument Serif per i
+     titoli, Newsreader per i testi, bianco su velo nero leggero, una riga sottile; logo vettoriale (build/brand/logo-bianco.svg). -->
+<html lang="it"><head><meta charset="utf-8">
+<style>
+@font-face { font-family: 'Instrument Serif'; src: url(../../build/fonts/InstrumentSerif_latin_n3.woff2) format('woff2'); font-style: normal; }
+@font-face { font-family: 'Instrument Serif'; src: url(../../build/fonts/InstrumentSerif_latin_i1.woff2) format('woff2'); font-style: italic; }
+@font-face { font-family: 'Newsreader'; src: url(../../build/fonts/Newsreader_latin_n7.woff2) format('woff2'); font-weight: 200 800; }
+html, body { margin: 0; width: 1920px; height: 1080px; background: transparent; overflow: hidden; }
+.terzo { position: absolute; left: 110px; bottom: 104px; color: #fff; opacity: 0; }
+.terzo::before { content: ''; position: absolute; left: -110px; right: -260px; top: -70px; bottom: -104px; z-index: -1;
+  background: radial-gradient(120% 100% at 0% 100%, rgba(0,0,0,.42), rgba(0,0,0,0) 70%); }
+.riga { width: 64px; height: 2px; background: #fff; margin-bottom: 22px; transform-origin: left; }
+.titolo { font: 400 76px/1 'Instrument Serif', serif; letter-spacing: -.5px; }
+.sotto { font: 300 26px/1.3 'Newsreader', serif; letter-spacing: .4px; margin-top: 14px; opacity: .88; }
+#chiusura { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; color: #fff; opacity: 0;
+  background: radial-gradient(70% 70% at 50% 50%, rgba(0,0,0,.55), rgba(0,0,0,.35)); }
+#chiusura svg { width: 520px; height: auto; margin: 0 auto 34px; display: block; }
+#chiusura .titolo { font-size: 64px; }
+#chiusura .sotto { font-size: 28px; letter-spacing: 3px; margin-top: 18px; }
+#nero { position: absolute; inset: 0; background: #000; opacity: 0; }
+</style></head>
+<body>
+<div id="terzi"></div>
+<div id="chiusura"><div id="logo"></div><div class="titolo"></div><div class="sotto"></div></div>
+<div id="nero"></div>
+<script>
+const liscio = u => u <= 0 ? 0 : u >= 1 ? 1 : u * u * (3 - 2 * u);
+let SHOT = [];
+async function prepara(shot, logoSvg) {
+  SHOT = shot; await document.fonts.ready;
+  const T = document.getElementById('terzi');
+  SHOT.forEach((s, i) => { if (!s.titolo || i === SHOT.length - 1) return;
+    const d = document.createElement('div'); d.className = 'terzo'; d.dataset.i = i;
+    d.innerHTML = `<div class="riga"></div><div class="titolo"></div><div class="sotto"></div>`;
+    d.querySelector('.titolo').textContent = s.titolo; d.querySelector('.sotto').textContent = s.sotto; T.appendChild(d); });
+  const ult = SHOT[SHOT.length - 1], C = document.getElementById('chiusura');
+  C.querySelector('.titolo').textContent = ult.titolo; C.querySelector('.sotto').textContent = ult.sotto;
+  document.getElementById('logo').innerHTML = logoSvg; await document.fonts.ready; return true;
+}
+// t in secondi: terzi in basso da t0 + 0,4 s per 3 s (entrata 0,5 s con salita di 14 px, uscita 0,4 s); chiusura dal suo t0 + 1,5 s
+window.vai = t => {
+  document.querySelectorAll('.terzo').forEach(d => { const s = SHOT[+d.dataset.i], a = t - (s.t0 + .4), dur = Math.min(3, s.t1 - s.t0 - .6);
+    const ent = liscio(a / .5), usc = 1 - liscio((a - dur + .4) / .4), o = Math.max(0, Math.min(ent, usc));
+    d.style.opacity = o; d.style.transform = `translateY(${(1 - ent) * 14}px)`;
+    d.querySelector('.riga').style.transform = `scaleX(${liscio((a - .15) / .6)})`; });
+  const u = SHOT[SHOT.length - 1], a = t - (u.t0 + 1.5), C = document.getElementById('chiusura');
+  C.style.opacity = liscio(a / .9); C.style.transform = `scale(${1.03 - .03 * liscio(a / 2.5)})`;
+  document.getElementById('nero').style.opacity = 1 - liscio(t / .9);   // dissolvenza dal nero all'inizio
+  return true;
+};
+</script>
+</body></html>

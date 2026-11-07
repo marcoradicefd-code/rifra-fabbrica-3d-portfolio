@@ -1,0 +1,170 @@
+<meta charset="utf-8">
+<title>Come nasce una cucina RiFRA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  /* token del design system RiFRA, estratti da rifra.com il 29/09/2026 (DESIGN-SYSTEM.md) */
+  --rf-black:#000;
+  --rf-white:#fff;
+  --rf-accent:#a8a6a1;      /* grigio caldo, accento del sito */
+  --rf-light:#dfe0e1;       /* grigio chiaro, pulsante chiaro */
+  --rf-dark:#38383b;        /* antracite, velature scure */
+  --paper:#f5f4f1;          /* fondo pagina: bianco caldo, non abbaglia in fiera */
+  --surface:#ffffff;
+  --text:#000;
+  --text-2:rgba(0,0,0,.68);
+  --border-light:rgba(0,0,0,.10);
+  --border-medium:rgba(0,0,0,.22);
+  --shadow-card:0 4px 24px rgba(0,0,0,.07);
+  --shadow-product:0 10px 40px rgba(0,0,0,.12);
+  --shadow-floating:0 20px 60px rgba(0,0,0,.2);
+  --ease-out-expo:cubic-bezier(.16,1,.3,1);
+  --display:"Instrument Serif",Georgia,serif;
+  --serif:"Newsreader",Georgia,serif;
+  --sans:"Helvetica Neue",Arial,sans-serif;
+}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--serif);overflow:hidden;-webkit-font-smoothing:antialiased}
+#app{position:relative;height:100%;width:100%;overflow:hidden}
+#scene{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+#scene.dragging{cursor:grabbing}
+
+.mast{position:absolute;left:16px;top:12px;background:rgba(245,244,241,.92);padding:10px 18px 12px 16px;border-radius:4px;pointer-events:none;max-width:min(620px,calc(100% - 32px))}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mast h1{margin:0;font:400 clamp(30px,3.6vw,52px)/1.05 var(--display);letter-spacing:-.02em;color:var(--text);text-wrap:balance}
+.mast p{margin:6px 0 0;font:400 15px/1.35 var(--serif);color:var(--text-2);letter-spacing:.02em}
+
+.card{position:absolute;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:min(390px,calc(100% - 32px));background:var(--surface);border-radius:4px;box-shadow:var(--shadow-product);padding:20px 22px 18px;display:flex;flex-direction:column;gap:10px;box-sizing:border-box}
+.eyebrow{font:400 14px/1 var(--serif);letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);display:flex;gap:8px;align-items:baseline}
+.eyebrow b{font:400 28px/1 var(--display);color:var(--text);letter-spacing:0}
+.card h2{margin:0;font:400 30px/1.1 var(--display);letter-spacing:-.02em;color:var(--text);text-wrap:balance}
+.data{margin:0;font:400 14px/1.4 var(--serif);letter-spacing:.02em;color:var(--text);background:var(--rf-light);border-radius:30px;padding:4px 12px;align-self:flex-start}
+.body{margin:0;font:400 16px/1.5 var(--serif);color:var(--text-2);max-width:62ch}
+.bar{height:2px;background:var(--border-light);overflow:hidden;position:relative;margin-top:2px}
+.bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--rf-black)}
+.ctrl{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.ctrl button,.index button,.motion{font:400 15px/1 var(--serif);letter-spacing:.02em;color:var(--text);background:var(--rf-light);border:0;padding:11px 18px;min-height:40px;cursor:pointer;border-radius:30px;transition:background-color .2s var(--ease-out-expo),color .2s var(--ease-out-expo)}
+.motion{position:absolute;right:16px;top:14px}
+.stylebtn{top:62px}
+#motion[aria-pressed="true"]{background:var(--rf-black);color:var(--rf-white)}
+.ctrl button:active,.index button:active,.motion:active{transform:scale(.97)}
+.fx.in{animation:fxIn .45s var(--ease-out-expo)}
+@keyframes fxIn{from{opacity:.25;transform:translateY(3px)}to{opacity:1;transform:none}}
+@media (pointer:coarse){.ctrl button,.index button,.motion{min-height:44px;min-width:44px}}
+.ctrl button:hover,.index button:hover,.motion:hover{background:#d0d1d3}
+.ctrl button.primary{background:var(--rf-black);color:var(--rf-white)}
+.ctrl button.primary:hover{background:var(--rf-dark)}
+.ctrl button[aria-pressed="true"]{background:var(--rf-black);color:var(--rf-white)}
+#more{display:none}
+button:focus-visible{outline:3px solid var(--rf-black);outline-offset:2px;box-shadow:0 0 0 6px var(--paper)}
+#play{min-width:150px}
+#scene.hot{cursor:pointer}
+@media (forced-colors:active){.index button[aria-current]{outline:2px solid CanvasText}}
+
+.index{position:absolute;right:16px;bottom:16px;left:430px;display:flex;justify-content:flex-end;pointer-events:none}
+.index ol{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;pointer-events:auto;max-width:100%}
+.index button{padding:8px 14px;display:flex;gap:6px;align-items:center;font-size:14px;min-height:36px;color:var(--text);background:rgba(255,255,255,.94);box-shadow:inset 0 0 0 1px var(--border-medium)}
+.index button b{font:400 17px/1 var(--display)}
+.index button[aria-current="step"]{background:var(--rf-black);color:var(--rf-white);box-shadow:none}
+
+/* segnaposto numerati sopra i reparti (tavola intera): bersagli veri, non scritte a terra */
+#pins{position:absolute;inset:0;pointer-events:none}
+.pin{position:absolute;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;border:0;background:var(--rf-black);color:var(--rf-white);font:400 19px/38px var(--display);text-align:center;padding:0;cursor:pointer;pointer-events:auto;box-shadow:0 2px 10px rgba(0,0,0,.25);transition:transform .2s var(--ease-out-expo)}
+.pin:hover,.pin.hot{transform:scale(1.12)}
+@media (pointer:coarse){.pin{width:44px;height:44px;margin:-22px 0 0 -22px;line-height:44px}}
+.kiosk .pin{width:56px;height:56px;margin:-28px 0 0 -28px;line-height:56px;font-size:26px}
+
+@media (max-width:899px){
+  .mast p{display:none}
+  .hint{display:none}
+  .card{padding:14px 16px 14px;gap:8px;bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+  .motion{top:10px;right:12px;padding:6px 12px}
+  .stylebtn{top:60px}
+  .mast{max-width:calc(100% - 150px)}
+  .card h2{font-size:24px}
+  .body{font-size:14px;line-height:1.45}
+  .index{left:16px;right:16px;bottom:calc(var(--card-h,300px) + 20px)}
+  .mast h1{font-size:26px}
+  .mast{padding:8px 12px}
+  .index button span{display:none}
+  .index ol{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;overflow:visible}
+  .index button{justify-content:center}
+  #more{display:inline-block}
+  .card:not(.open) .body{display:none}
+}
+.caption{position:absolute;margin:0;padding:10px 18px;background:rgba(255,255,255,.96);border-radius:4px;box-shadow:var(--shadow-card);font:400 20px/1.35 var(--serif);color:var(--text);text-align:center;text-wrap:balance;pointer-events:none;max-width:min(760px,calc(100% - 32px));box-sizing:border-box}
+.kband{position:absolute;right:16px;top:14px;display:flex;gap:14px;align-items:center;background:var(--surface);border-radius:4px;box-shadow:var(--shadow-product);padding:12px 20px 12px 12px}
+.kband .qr svg{width:120px;height:120px;display:block}
+.kband b{display:block;font:400 26px/1.1 var(--display);letter-spacing:-.02em;color:var(--text)}
+.kband span{display:block;font:400 15px/1.4 var(--serif);color:var(--text-2);margin-top:6px}
+.tapcta{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:400 22px/1 var(--serif);letter-spacing:.02em;color:var(--rf-white);background:var(--rf-black);border:0;border-radius:30px;padding:24px 40px;box-shadow:var(--shadow-floating);cursor:pointer;animation:ctaPulse 2.4s ease-in-out infinite}
+@keyframes ctaPulse{50%{transform:translate(-50%,-50%) scale(1.04)}}
+.kiosk .mast,.kiosk .card,.kiosk .index,.kiosk .motion,.kiosk .caption,.kiosk .kband,.kiosk .tapcta{zoom:var(--k,1)}
+.kiosk .card .body,.kiosk #voice,.kiosk #more,.kiosk .stylebtn{display:none}
+.kiosk .kband{top:auto;bottom:16px;right:16px}
+.kiosk .index{bottom:auto;top:14px;left:auto;right:16px;max-width:640px}
+.kiosk .mast h1{font-size:44px}
+.kiosk .index button{padding:8px 12px}
+.kiosk .motion{top:auto;bottom:170px}
+.kiosk,.kiosk *{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+.kiosk body{touch-action:none;overscroll-behavior:none}
+.kiosk button{touch-action:manipulation;min-height:56px}
+.video .ctrl,.video .index,.video .motion,.video .tapcta,.video #voice,.video #more,.video .bar,.video #pins{display:none!important}
+.video .fx.in{animation:none}
+.video .kband{top:auto;bottom:16px;right:16px}
+.video .caption{font-size:30px;max-width:1040px}
+/* video su schermo grande: QR da ~15 cm su un 65" */
+.video .kband{padding:14px 22px 14px 14px;gap:20px}.video .kband .qr svg{width:216px;height:216px}.video .kband b{font-size:36px}.video .kband span{font-size:20px}
+@media (max-height:560px){ .card:not(.open) .body{display:none} #more{display:inline-block} .card.open{max-height:calc(100dvh - 24px);overflow:auto} }
+@media (max-height:560px) and (orientation:landscape){
+  .mast h1{font-size:20px} .mast p{display:none}
+  .card{width:min(340px,46vw);max-height:calc(100dvh - 16px);overflow:auto;bottom:8px;gap:4px;padding:10px 12px}
+  .card h2{font-size:20px}
+  .index{left:calc(min(340px,46vw) + 28px);right:8px;bottom:8px;top:auto}
+  .index ol{display:flex!important;flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start}
+}
+.mast{left:max(16px,env(safe-area-inset-left,0px))}.card{left:max(16px,env(safe-area-inset-left,0px))}
+.index,.motion{right:max(16px,env(safe-area-inset-right,0px))}
+@media (prefers-reduced-motion:reduce){ .tapcta{animation:none} .fx.in{animation:none} .ctrl button:active,.index button:active{transform:none} .pin{transition:none} }
+</style>
+
+<main id="app">
+  <canvas id="scene" role="img" aria-label="Tavola isometrica animata della fabbrica RiFRA di Gerno di Lesmo: dodici passaggi, dal progetto e dal pannello grezzo alla cucina imballata."></canvas>
+  <div id="pins"></div>
+
+  <header class="mast">
+    <h1>Come nasce una cucina RiFRA</h1>
+    <p>Fabbrica di Gerno di Lesmo · produzione in sede dal 1977</p>
+  </header>
+
+  <button id="motion" type="button" class="motion" aria-pressed="false">Ferma le animazioni</button>
+  <button id="style" type="button" class="motion stylebtn">Vista a matita</button>
+
+  <p id="live" class="sr" aria-live="polite"></p>
+  <section class="card" id="card" aria-labelledby="title">
+    <div class="eyebrow fx"><b id="num">12</b><span id="phase">passaggi · un solo capannone</span></div>
+    <h2 id="title" class="fx">Dal pannello alla cucina</h2>
+    <p class="data fx" id="data">Gerno di Lesmo · produzione in sede dal 1977</p>
+    <ul id="labs" class="sr"></ul>
+    <p class="body fx" id="body"></p>
+    <div class="bar" aria-hidden="true"><i id="prog"></i></div>
+    <div class="ctrl">
+      <button id="prev" type="button" aria-label="Passaggio precedente">&larr;</button>
+      <button id="play" type="button" class="primary">Avvia il giro</button>
+      <button id="next" type="button" aria-label="Passaggio successivo">&rarr;</button>
+      <button id="sheet" type="button">Tavola intera</button>
+      <button id="voice" type="button" aria-pressed="false" hidden>Voce narrante</button>
+      <button id="more" type="button" aria-expanded="false">Leggi tutto</button>
+    </div>
+  </section>
+
+  <nav class="index" aria-label="Passaggi"><ol id="idx"></ol></nav>
+  <p id="caption" class="caption" aria-hidden="true" hidden></p>
+  <aside id="kband" class="kband" hidden aria-label="Scopri di più"><div class="qr">__QR__</div><div><b>Come nasce ogni cucina RiFRA</b><span>rifra.com/produzione</span></div></aside>
+  <button id="tapcta" type="button" class="tapcta" hidden>Tocca per il racconto completo</button>
+</main>
+<audio id="voce" preload="none" data-src="__AUDIO__"></audio>

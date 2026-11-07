@@ -1,0 +1,21 @@
+{
+  "name": "come-nasce-una-cucina-rifra-tools",
+  "version": "1.0.0",
+  "description": "Strumenti del progetto: prove senza browser, generazione della pagina, esportazione video, controlli visivi",
+  "scripts": {
+    "assemble": "python3 assemble.py",
+    "test": "node test-headless.js ../../src.html && node test-headless.js ../../src.html '?kiosk=1' && node test-headless.js ../../src.html '?video=1'",
+    "build": "cd ../.. && python3 build/build.py src.html come-nasce-una-cucina-rifra.html build/fonts",
+    "check": "node controlli/check.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "playwright": "^1.59.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

@@ -1,0 +1,11 @@
+VIDEO — versioni precedenti
+===========================
+
+- come-nasce-una-cucina-rifra-spot.mp4 — spot di 50 s fatto in Blender, con motion graphic e musica
+  (versione del 01/10/2026; musica: «Loyalty (No Drums)» di BreakzStudios, Pixabay Content License).
+- come-nasce-una-cucina-rifra-3d.mp4   — giro completo della fabbrica in 3D, muto (02/10/2026 mattina).
+
+ATTENZIONE: tutti e due seguono l'ORDINE VECCHIO dei passaggi, quello di prima della revisione del 02/10. Non hanno
+furgone, camion, cancelli, sottotitolo nuovo né versione inglese. Il 02/10 sera Marco ha fermato i nuovi render
+(«basta il file»): la consegna aggiornata è la pagina 3D in 01_Per-il-cliente.
+- Lo spot mostra persone reali in forma stilizzata: prima di pubblicarlo serve il loro consenso scritto.

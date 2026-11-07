@@ -1,0 +1,52 @@
+{
+  "nota": "Ritratti STILIZZATI di tre persone del direttivo RiFRA, disegnati dal codice (nessuna foto applicata, nessun modello scaricato). Fonti: SOLO le foto fornite da Marco il 01/10/2026 in ricerca/persone-rifra/ (nessuna ricerca online). Nomi confermati da Marco; ruoli non noti (campo vuoto). PRIMA DI PUBBLICARE qualunque video o immagine con questi personaggi serve il CONSENSO SCRITTO delle persone ritratte.",
+  "uso": "Letto da build/tools/blender/esporta-animazione.js: crea le tre persone nella pagina (persone.js, stesso scheletro a 23 ossa) DOPO tutte le altre, le anima con le pose qui sotto, aggiunge capelli, barba, occhiali, collana, giacca e camicetta come geometria propria e scrive tutto in blender/anim/ (Persona_01_<nome>, Scheletro_01_<nome> nella collezione RiFRA-persone). Le altre persone non cambiano. Coordinate three.js: x = est, z = sud, metri; ry = verso in cui guarda (0 = sud, pi/2 = est). Prova: blender/anim/prova_personaggi.py.",
+  "dove": "Ufficio tecnico al piano terra (tappa 1, F 7464), in piedi tutti e tre sul lato nord del tavolo grande con le tavole stese (uffici.js: x 8,4-10, z 1,9-3,1), rivolti verso il tavolo e verso la camera dello spot. E' la zona dell'ufficio che si vede sia dalla camera indicata nel compito (6-11 s, da (-9, 21, 13) verso (6, 5, 1.5)) sia da quella attuale di spot.py (5-9,5 s, da (-6, 18, 8) verso (4, 6, 1.4)): l'isola centrale e' coperta dalla parete scura a z 5,6. Nessuna persona gia' presente e' stata spostata o cambiata.",
+  "personaggi": [
+    {
+      "nome": "Fabio",
+      "ruolo": "",
+      "foto": ["ricerca/persone-rifra/02-fabio.jpg", "ricerca/persone-rifra/01-fabio-e-altra-persona-lecconotizie.jpg (solo la persona a sinistra)"],
+      "tratti": "uomo sui 35-40 anni; capelli castano scuri corti, sfumati ai lati, con riga sul lato destro e ciuffo alzato; barba corta curata e baffi; carnagione chiara; corporatura media-robusta; giacca blu scuro con camicia azzurra chiara aperta al collo (02), pantaloni scuri",
+      "dove": { "x": 8.5, "z": 1.45, "ry": 0.05, "cosa": "in piedi all'angolo nord-ovest del tavolo: spiega e indica le tavole, si gira verso Luigi e Assunta" },
+      "seme": 9101,
+      "aspetto": { "altezza": 1.78, "corporatura": 0.13, "pelle": "#e9c2a6", "colCapelli": "#33231a", "capelli": "sfumati", "barba": 0.45, "maniche": "lunghe", "maglia": "#1f2a44", "pant": "#24262c", "scarpe": ["#3a2a20", 0.22], "occhiali": false },
+      "abito": { "tipo": "giacca", "camicia": "#bcd4ea", "vY": 1.13, "vX": 0.058, "colloAperto": 0.032, "rug": 0.82, "orlo": 0.79 },
+      "volume": { "busto": [0.003, 0.004], "braccio": 0.003 },
+      "testa": { "capelli": "ciuffo", "barba": true, "sopracciglia": "#2a1c14" },
+      "posa": { "tipo": "in piedi", "periodo": 16, "tavolo": [8.85, 0.78, 2.2],
+        "fasi": [[0, 3.0, "ascolta", "Luigi"], [3.0, 5.0, "parla", "Assunta"], [5.0, 8.0, "indica", "tavolo"], [8.0, 11.0, "parla", "Luigi"], [11.0, 13.5, "ascolta", "Assunta"], [13.5, 16.0, "indica", "tavolo"]] }
+    },
+    {
+      "nome": "Luigi",
+      "detto": "Gigi",
+      "cognome": "Molteni",
+      "ruolo": "",
+      "foto": ["ricerca/persone-rifra/04-luigi.webp"],
+      "tratti": "uomo sui 55 anni; capelli grigio-argento lunghi fino alle spalle, molto ricci e voluminosi; viso rasato; carnagione chiara-olivastra; corporatura media; abito nero, camicia bianca aperta al collo",
+      "dove": { "x": 9.75, "z": 1.58, "ry": -0.4, "cosa": "in piedi all'angolo nord-est del tavolo: parla, ascolta, indica i disegni" },
+      "seme": 9202,
+      "aspetto": { "altezza": 1.77, "corporatura": 0.04, "pelle": "#d6aa89", "colCapelli": "#a8a49d", "capelli": "corti", "barba": 0, "maniche": "lunghe", "maglia": "#161618", "pant": "#161618", "scarpe": ["#111113", 0.12], "occhiali": false },
+      "abito": { "tipo": "giacca", "camicia": "#eeede8", "vY": 1.11, "vX": 0.062, "colloAperto": 0.036, "rug": 0.78, "orlo": 0.79 },
+      "volume": { "busto": [0.003, 0.004], "braccio": 0.003 },
+      "testa": { "capelli": "ricci-lunghi", "barba": false, "sopracciglia": "#4a4642" },
+      "posa": { "tipo": "in piedi", "periodo": 16, "tavolo": [9.5, 0.78, 2.3],
+        "fasi": [[0, 3.0, "parla", "Fabio"], [3.0, 5.0, "ascolta", "Fabio"], [5.0, 8.0, "ascolta", "tavolo"], [8.0, 11.0, "ascolta", "Fabio"], [11.0, 13.5, "parla", "Assunta"], [13.5, 16.0, "indica", "tavolo"]] }
+    },
+    {
+      "nome": "Assunta",
+      "ruolo": "",
+      "foto": ["ricerca/persone-rifra/03-assunta.webp"],
+      "tratti": "donna sui 60 anni; capelli castano scuro tirati indietro in uno chignon alto (con elastico rosa); occhiali squadrati spessi blu petrolio; carnagione chiara; collana di perle a tre fili; camicetta beige ampia a maniche lunghe con colletto, pantaloni scuri",
+      "dove": { "x": 9.12, "z": 1.5, "ry": -0.05, "cosa": "in piedi in mezzo, sul lato nord del tavolo: guarda le tavole, ascolta e risponde" },
+      "seme": 9303,
+      "aspetto": { "donna": true, "altezza": 1.63, "corporatura": 0.07, "pelle": "#e6bea2", "colCapelli": "#2b1d17", "capelli": "raccolti", "barba": 0, "maniche": "lunghe", "maglia": "#cdb394", "pant": "#1f1f23", "scarpe": ["#141416", 0.15], "occhiali": false },
+      "abito": { "tipo": "camicetta", "vY": 1.33, "vX": 0.42, "colloAperto": 0.02, "rug": 0.62, "orlo": 0.8 },
+      "volume": { "busto": [0.006, 0.009], "braccio": 0.006 },
+      "testa": { "capelli": "chignon-alto", "occhiali": { "colore": "#1d4b5b", "mezzaL": 0.022, "mezzaA": 0.0165, "spessore": 0.0036 }, "collana": { "fili": 3, "raggio": 0.0037 }, "sopracciglia": "#2b1d17" },
+      "posa": { "tipo": "in piedi", "periodo": 16, "tavolo": [9.15, 0.78, 2.25],
+        "fasi": [[0, 3.0, "ascolta", "Luigi"], [3.0, 5.0, "ascolta", "Fabio"], [5.0, 8.0, "disegni", "tavolo"], [8.0, 11.0, "parla", "Fabio"], [11.0, 13.5, "ascolta", "Luigi"], [13.5, 16.0, "disegni", "tavolo"]] }
+    }
+  ],
+  "tavolo": [9.2, 0.78, 2.3]
+}

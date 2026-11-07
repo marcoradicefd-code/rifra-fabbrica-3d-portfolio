@@ -1,0 +1,31 @@
+COME NASCE UNA CUCINA RiFRA — consegna
+======================================
+
+DA INVIARE AL CLIENTE
+- RiFRA-fabbrica-3D-<data>.zip — è la cartella 01_Per-il-cliente già zippata: si manda questo file
+  (SwissTransfer, WeTransfer o e-mail; circa 10 MB).
+
+01_Per-il-cliente
+- come-nasce-una-cucina-rifra-3d.html    — pagina 3D interattiva, parte in italiano (pulsante «English» per l'inglese).
+- come-nasce-una-cucina-rifra-3d-en.html — stessa pagina, parte in inglese (pulsante «Italiano»).
+  Doppio clic: si aprono nel browser (Chrome o Edge aggiornati) e funzionano anche senza internet.
+  Per la fiera aggiungere «?kiosk=1» alla fine dell'indirizzo.
+- Rifra-FABBRICA-3D-codice.zip — il codice del progetto all'ultimo commit, come il «Download ZIP» di GitHub (senza storia).
+- LEGGIMI.txt — istruzioni per il cliente, in italiano e in inglese.
+
+02_Video
+- Spot e giro in 3D: versioni PRECEDENTI, con l'ordine vecchio dei passaggi (vedi il LEGGIMI della cartella).
+
+03_Repository-git
+- Clone Git del progetto con tutta la storia, per chi continua a sviluppare: pagina three.js (3d/), versione Blender e
+  spot (blender/), strumenti di build e di controllo (build/tools/), documenti e fonti (ricerca/).
+- Iniziare da README.md, poi CLAUDE.md e HANDOFF.md: regole, comandi, decisioni, trappole.
+- Non contiene foto del cliente, render, video, file .blend né la musica: sono pesanti, riservati o con licenza
+  (vedi README.md, «Cosa non c'è nel repository»). Lo stesso vale per lo zip del codice.
+
+IMPRONTE.sha256 — impronte SHA-256 dei file consegnati (verifica: shasum -a 256 -c IMPRONTE.sha256).
+
+NOTE
+- Materiale riservato di RiFRA: non pubblicare senza autorizzazione.
+- Il codice contiene anche i documenti di lavoro (HANDOFF.md, VERBALE-revisione.md, ricerca/): note interne, nomi,
+  decisioni. Se il cliente non deve vederli, mandare solo le due pagine .html.

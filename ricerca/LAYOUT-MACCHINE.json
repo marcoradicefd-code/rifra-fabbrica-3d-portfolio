@@ -1,0 +1,3450 @@
+{
+  "titolo": "RiFRA Gerno di Lesmo - layout metrico di macchine e impianti (rilievo del 30/09/2026)",
+  "metodo": "Pianta di evacuazione (IMG_0009) rettificata con omografia sui 4 spigoli dell'edificio; scala da satellite Esri z19 (0.209 m/px): muro ovest -> muro est = 70.9 m; profondita' uffici NO -> muro sud = 40.75 m. Vedi MAPPA-FOTO.md.",
+  "scala": {
+    "m_per_unita_pianta_x": 0.0709,
+    "m_per_unita_pianta_z": 0.0742,
+    "immagine_pianta_rettificata": "ricerca/zoom/pianta_rettificata_5cm.jpg (0.05 m/px; x = px*0.05 - 14.18; z = py*0.05 - 11.13)",
+    "immagine_satellite_ruotata": "ricerca/esterno/satellite-ruotato-10cm.jpg (0.10 m/px; x = px*0.1 - 12.4; z = py*0.1 - 10.75)"
+  },
+  "edificio": {
+    "sistema": "metri; x = est della pianta (verso il silo), z = sud della pianta (verso via F.lli Cervi); origine = spigolo nord-ovest del blocco uffici a due piani. Nota: il 'nord' della pianta NON e' il nord geografico: la pianta ha +x verso NO reale (azimut ~316 gradi) e +z (via F.lli Cervi) verso NE reale (azimut ~46 gradi).",
+    "HALL": [
+      [
+        0,
+        0
+      ],
+      [
+        24.9,
+        0
+      ],
+      [
+        24.9,
+        2.4
+      ],
+      [
+        50,
+        2.4
+      ],
+      [
+        50,
+        5.4
+      ],
+      [
+        70.9,
+        5.4
+      ],
+      [
+        70.9,
+        40.6
+      ],
+      [
+        0,
+        40.6
+      ]
+    ],
+    "HALL_note": "Perimetro esterno unico (uffici compresi). Larghezza O-E 70.9 m, profondita' 40.6 m (uffici NO) / 35.2 m (lato est). Gradini del lato nord: z=0 fino a x=24.9, z=2.4 fino a x=50, z=5.4 fino al muro est (satellite; la pianta fotografata da' 2.4 e ~7, con errore della carta ondulata).",
+    "HALL_vecchio": "[[0,-3],[28,-3],[28,0],[62,0],[62,4],[120,4],[120,56],[0,56]] = 120 x 59 m: sovradimensionato di circa 1.7 volte in x e 1.45 in z.",
+    "volumi": [
+      {
+        "id": "V1",
+        "nome": "Blocco uffici a due piani (ufficio tecnico/commerciale, ingresso, scala)",
+        "x0": 0,
+        "z0": 0,
+        "w": 10.3,
+        "d": 11.2,
+        "h": 7.6,
+        "tetto": "piano scuro",
+        "fonti": [
+          "PE",
+          "E earth-uffici-insegna",
+          "F 7465",
+          "satellite"
+        ]
+      },
+      {
+        "id": "V2",
+        "nome": "Striscia uffici piano terra lungo il lato ovest (dentro l'involucro a volte)",
+        "x0": 0,
+        "z0": 11.2,
+        "w": 5.3,
+        "d": 29.4,
+        "h": 3.2,
+        "tetto": "controsoffitto; sopra continuano le volte",
+        "fonti": [
+          "PE",
+          "F 7469-7471",
+          "V 0012",
+          "satellite"
+        ]
+      },
+      {
+        "id": "V3",
+        "nome": "Magazzino / spedizioni ovest + locale mobili scuri (tetto piano chiaro a quadrotti)",
+        "x0": 10.3,
+        "z0": 0,
+        "w": 39.7,
+        "d": 13,
+        "h": 6.2,
+        "nota": "il tratto x 24.9-50 ha il muro nord a z=2.4",
+        "fonti": [
+          "PE",
+          "V f_004-f_016",
+          "F 7456, 7460",
+          "satellite"
+        ]
+      },
+      {
+        "id": "V4",
+        "nome": "Magazzino / spedizioni est (tetto piano)",
+        "x0": 50,
+        "z0": 5.4,
+        "w": 20.9,
+        "d": 7.6,
+        "h": 6.2,
+        "fonti": [
+          "PE",
+          "F 7457-7458",
+          "satellite"
+        ]
+      },
+      {
+        "id": "V5",
+        "nome": "Produzione, copertura a volte ribassate (24 volte da ~2.95 m, asse nord-sud)",
+        "x0": 0,
+        "z0": 12.4,
+        "w": 70.9,
+        "d": 28.2,
+        "h": 7.2,
+        "fonti": [
+          "satellite (24 nervature ogni 3.0 m)",
+          "E earth-*"
+        ]
+      }
+    ],
+    "pareti_interne": [
+      {
+        "id": "W1",
+        "nome": "Parete magazzino / produzione",
+        "da": [
+          5.3,
+          13
+        ],
+        "a": [
+          70.9,
+          13
+        ],
+        "h": 6,
+        "finitura": "lato nord bianco/crema a blocchi con finestre alte a lamelle; lato sud antracite",
+        "aperture": "x 40.4-42.4 (corridoio centrale), x ~47.5-49 (porta usata nel video f_018), x ~64 porta accanto al Robopac (F 7458), x 69.3-70.9 corridoio lungo il muro est (V f_037)"
+      },
+      {
+        "id": "W2",
+        "nome": "Parete uffici / produzione (con finestre sugli uffici)",
+        "da": [
+          5.3,
+          11.2
+        ],
+        "a": [
+          5.3,
+          40.6
+        ],
+        "h": 3.2,
+        "finitura": "antracite verso la produzione, finestre con infissi chiari (V 0011, f_067)"
+      },
+      {
+        "id": "W3",
+        "nome": "Muro est del blocco uffici a due piani",
+        "da": [
+          10.3,
+          0
+        ],
+        "a": [
+          10.3,
+          11.2
+        ],
+        "h": 7.6
+      },
+      {
+        "id": "W4",
+        "nome": "Muro sud del blocco uffici a due piani",
+        "da": [
+          0,
+          11.2
+        ],
+        "a": [
+          10.3,
+          11.2
+        ],
+        "h": 7.6
+      },
+      {
+        "id": "W5",
+        "nome": "Blocco sotto il soppalco: area break, archivio, magazzino attrezzature montatori",
+        "rett": [
+          7.3,
+          13,
+          16.6,
+          6.4
+        ],
+        "h": 3.2,
+        "finitura": "antracite, porte chiare, una porta con luce (V f_066, f_069)"
+      },
+      {
+        "id": "W6",
+        "nome": "Cabina verniciatura (stanza chiusa, pareti chiare sporche di overspray)",
+        "rett": [
+          26.6,
+          13.1,
+          9.3,
+          6.4
+        ],
+        "h": 4.5,
+        "fonti": [
+          "PE",
+          "F 7454"
+        ]
+      },
+      {
+        "id": "W7",
+        "nome": "Locale tecnico (angolo SE)",
+        "rett": [
+          68.9,
+          38.7,
+          2,
+          1.9
+        ],
+        "h": 3
+      },
+      {
+        "id": "W8",
+        "nome": "Deposito S.C.H.",
+        "rett": [
+          36,
+          13.8,
+          2.8,
+          1.2
+        ],
+        "h": 2.5
+      }
+    ],
+    "corridoi": [
+      {
+        "nome": "corridoio magazzino E-O",
+        "da": [
+          10.3,
+          10.3
+        ],
+        "a": [
+          70,
+          10.3
+        ],
+        "largo": 2.5
+      },
+      {
+        "nome": "corridoio montaggio/laboratorio E-O",
+        "da": [
+          6,
+          23.4
+        ],
+        "a": [
+          69,
+          23.4
+        ],
+        "largo": 2
+      },
+      {
+        "nome": "corridoio falegnameria E-O",
+        "da": [
+          6,
+          33.3
+        ],
+        "a": [
+          62,
+          33.3
+        ],
+        "largo": 2
+      },
+      {
+        "nome": "corridoio centrale N-S",
+        "da": [
+          41.3,
+          13
+        ],
+        "a": [
+          41.3,
+          33.3
+        ],
+        "largo": 2.2
+      },
+      {
+        "nome": "corridoio ovest N-S (lungo gli uffici)",
+        "da": [
+          6.6,
+          11.5
+        ],
+        "a": [
+          6.6,
+          40.6
+        ],
+        "largo": 1.8
+      },
+      {
+        "nome": "corridoio falegnameria ovest N-S",
+        "da": [
+          9.3,
+          23.4
+        ],
+        "a": [
+          9.3,
+          40.6
+        ],
+        "largo": 1.8
+      },
+      {
+        "nome": "corridoio est (levigatrice -> porta SE)",
+        "da": [
+          60,
+          23.4
+        ],
+        "a": [
+          62,
+          40.6
+        ],
+        "largo": 1.8
+      }
+    ],
+    "soppalco": {
+      "id": "S1",
+      "nome": "Soppalco con ringhiera gialla",
+      "x0": 7.3,
+      "z0": 13,
+      "w": 18.5,
+      "d": 6.4,
+      "quota_piano": 3.3,
+      "ringhiera": "gialla #F2C500, h 1.1 m, sui lati sud ed est",
+      "scala": {
+        "x0": 24,
+        "z0": 18.1,
+        "w": 1.8,
+        "d": 1.3,
+        "nota": "scala disegnata in pianta accanto al magazzino attrezzature montatori"
+      },
+      "fonti": [
+        "V f_062, f_066, f_068, f_069",
+        "F 7442, 7453 (sullo sfondo)",
+        "PE (scala)"
+      ],
+      "confidenza": "media"
+    },
+    "scala_uffici": {
+      "x0": 6.3,
+      "z0": 10.4,
+      "w": 3,
+      "d": 1,
+      "nota": "scala al primo piano degli uffici (F 7466, 7467; PE tratteggio)"
+    },
+    "aperture_facciate": [
+      {
+        "nome": "Ingresso uffici con pensilina",
+        "facciata": "ovest",
+        "x": 0,
+        "z": 11,
+        "largo": 1.2,
+        "fonti": [
+          "PE",
+          "F 7465"
+        ]
+      },
+      {
+        "nome": "Porta pedonale con pensilina (spigolo SO)",
+        "facciata": "sud",
+        "x": 1.8,
+        "z": 40.6,
+        "largo": 1,
+        "fonti": [
+          "V 0012",
+          "E streetview-facciata-cancello"
+        ]
+      },
+      {
+        "nome": "Portone scorrevole bianco",
+        "facciata": "sud",
+        "x": 8.5,
+        "z": 40.6,
+        "largo": 3,
+        "fonti": [
+          "PE uscita x 9.3",
+          "V 0012",
+          "E streetview-facciata-cancello"
+        ]
+      },
+      {
+        "nome": "Uscita di sicurezza",
+        "facciata": "sud",
+        "x": 28.5,
+        "z": 40.6,
+        "largo": 1.2,
+        "fonti": [
+          "PE"
+        ]
+      },
+      {
+        "nome": "Uscita di sicurezza",
+        "facciata": "sud",
+        "x": 46.6,
+        "z": 40.6,
+        "largo": 1.2,
+        "fonti": [
+          "PE"
+        ]
+      },
+      {
+        "nome": "Porta falegnameria SE (anta a battente + scorrevole)",
+        "facciata": "sud",
+        "x": 62.1,
+        "z": 40.6,
+        "largo": 2.5,
+        "fonti": [
+          "PE",
+          "V f_042, f_049, f_050"
+        ]
+      },
+      {
+        "nome": "Porta locale tecnico",
+        "facciata": "sud",
+        "x": 70,
+        "z": 40.6,
+        "largo": 0.9,
+        "fonti": [
+          "PE"
+        ]
+      },
+      {
+        "nome": "Uscita di emergenza (zona Cefla, armadi rossi)",
+        "facciata": "est",
+        "x": 70.9,
+        "z": 18.4,
+        "largo": 1.2,
+        "fonti": [
+          "PE",
+          "V f_035"
+        ]
+      },
+      {
+        "nome": "Porte verso la centrale termica",
+        "facciata": "est",
+        "x": 70.9,
+        "z": 28.5,
+        "largo": 1,
+        "fonti": [
+          "PE",
+          "F 7448"
+        ]
+      },
+      {
+        "nome": "Portone sezionale magazzino est",
+        "facciata": "est",
+        "x": 70.9,
+        "z": 9.5,
+        "largo": 3.5,
+        "fonti": [
+          "V f_014, F 7456"
+        ]
+      },
+      {
+        "nome": "Porta nord al gradino (locale mobili scuri)",
+        "facciata": "nord",
+        "x": 24.9,
+        "z": 1.2,
+        "largo": 1.2,
+        "fonti": [
+          "PE",
+          "F 7460",
+          "V f_005"
+        ]
+      },
+      {
+        "nome": "Porta verde al gradino (magazzino)",
+        "facciata": "nord",
+        "x": 49.9,
+        "z": 3.9,
+        "largo": 1.2,
+        "fonti": [
+          "PE",
+          "V f_014"
+        ]
+      }
+    ],
+    "insegne": [
+      {
+        "id": "RIFRA-N",
+        "facciata": "nord del blocco uffici (z = 0, rivolta verso il cortile nord e gli alberi, NON verso la strada)",
+        "x": 6,
+        "y": 6.9,
+        "z": -0.05,
+        "w": 3,
+        "h": 0.75,
+        "ry": 3.141592653589793,
+        "fonti": [
+          "F 7465 (faccia sinistra)",
+          "E earth-uffici-insegna"
+        ],
+        "confidenza": "alta",
+        "nota": "E' la facciata 'dietro' rispetto a via F.lli Cervi. Lettere in rilievo scure su fascia bianca sopra le vetrate."
+      },
+      {
+        "id": "RIFRA-O",
+        "facciata": "ovest del blocco uffici (x = 0, sul vialetto del parcheggio ovest), vicino all'ingresso",
+        "x": -0.05,
+        "y": 6.9,
+        "z": 9.3,
+        "w": 2.2,
+        "h": 0.6,
+        "ry": -1.5707963267948966,
+        "fonti": [
+          "F 7465 (faccia destra)",
+          "E earth-tetto-ovest"
+        ],
+        "confidenza": "media",
+        "nota": "Esiste anche questa, ma e' piu' piccola e spostata verso sud (sopra l'ingresso), non centrata a z=4.5 larga 10 m come nel modello."
+      },
+      {
+        "id": "TARGA-17",
+        "nome": "Pilastro civico 17 con pensilina a due falde e targa RIFRA",
+        "x": 7.3,
+        "z": 47.2,
+        "fonti": [
+          "E streetview-ingresso-17",
+          "PE freccia ingresso x 7.3"
+        ],
+        "confidenza": "media"
+      }
+    ],
+    "esterno": {
+      "via_fratelli_cervi": {
+        "z_recinzione_sud": 47,
+        "larghezza_carreggiata": 9.5,
+        "nota": "satellite: recinzione a z = 47.0, carreggiata z 47-56.5 con alberi e auto sul lato opposto. La pianta disegna la recinzione a z ~50 (esterni schematici)."
+      },
+      "fascia_sud": {
+        "z0": 40.6,
+        "z1": 47,
+        "nota": "cortile in autobloccanti; furgoni e auto parcheggiati perpendicolari al muro sud (satellite) / stalli a spina in pianta (x 11.6-63.5)"
+      },
+      "parcheggio_ovest": {
+        "recinzione_x": -6,
+        "stalli_x0": -5.8,
+        "stalli_x1": -3.6,
+        "corsia_x0": -3.6,
+        "corsia_x1": 0,
+        "stalli_z0": 1,
+        "stalli_z1": 41,
+        "n_stalli": 8,
+        "lunghezza_stallo": 5,
+        "larghezza_stallo": 2.2,
+        "orientamento": "auto parcheggiate IN FILA, parallele al muro (asse nord-sud, 'in verticale' sulla pianta), muso verso sud o nord",
+        "edificio_vicino_x": -11.6,
+        "fonti": [
+          "PE (8 stalli da ~4.9 m tra due linee tratteggiate)",
+          "satellite (auto 2 x 4.2 m allineate N-S a x -5.2..-3.4)",
+          "V 0012 t=12.5 s",
+          "F 7465"
+        ],
+        "confidenza": "alta"
+      },
+      "cortile_nord_ovest": {
+        "nota": "piazzale in autobloccanti a nord-ovest del blocco uffici (F 7465), confine nord tratteggiato a z ~ -2.6 (pianta) poi obliquo verso est"
+      },
+      "confine_nord": [
+        [
+          -8,
+          -2.6
+        ],
+        [
+          40,
+          -2.2
+        ],
+        [
+          81.3,
+          8.4
+        ],
+        [
+          100,
+          13
+        ]
+      ],
+      "cancelli": [
+        {
+          "nome": "Cancello ovest (accesso al vialetto/parcheggio ovest)",
+          "x": -4.8,
+          "z": 47,
+          "fonti": [
+            "PE freccia",
+            "V 0012"
+          ]
+        },
+        {
+          "nome": "Ingresso civico 17 (pedonale + carraio verde)",
+          "x": 7.3,
+          "z": 47,
+          "fonti": [
+            "PE freccia",
+            "E streetview-*"
+          ]
+        },
+        {
+          "nome": "Ingresso carrabile est (verso cortile impianti e porta SE)",
+          "x": 67.5,
+          "z": 47,
+          "fonti": [
+            "PE freccia",
+            "V f_042 (cancello verde visto dalla porta)"
+          ]
+        }
+      ]
+    }
+  },
+  "macchine": [
+    {
+      "id": "M01",
+      "nome": "Centro di lavoro CNC n.1",
+      "marca": "Biesse Rover A (targa 'Rover A' sul fianco)",
+      "zona": "LABORATORIO / FALEGNAMERIA CNC",
+      "rot": 0,
+      "colori": {
+        "corpo": "#E6E7E4",
+        "cappa": "#2E3134",
+        "fascia": "#7DBA2F",
+        "piano": "#1E1F20",
+        "tubi": "#D9BE6A",
+        "righe_pavimento": "#E3B21B"
+      },
+      "aspetto": "portale bianco con cappa in vetro fume' e fascia verde Biesse, scritta BIESSE verticale, piano a barre nere con ventose, calata aspirazione gialla spiralata dal soffitto, righe gialle a terra attorno all'area; pulpito bianco con monitor all'estremita' ovest, banco da lavoro in truciolare davanti",
+      "operatore": "lato sud (fronte), pulpito all'estremita' ovest",
+      "flusso": "pannelli dal deposito/sezionatrice -> CNC -> bordatura a est",
+      "fonti": [
+        "PE",
+        "F 7442, 7443",
+        "V f_062, f_063"
+      ],
+      "confidenza": "alta",
+      "centro": {
+        "x": 25.7,
+        "z": 28.7
+      },
+      "dimensioni": {
+        "w": 6.8,
+        "d": 4.8,
+        "h": 2.8
+      },
+      "rett_pianta": [
+        22.3,
+        26.3,
+        6.8,
+        4.8
+      ]
+    },
+    {
+      "id": "M02",
+      "nome": "Centro di lavoro CNC n.2",
+      "marca": "Biesse (Rover, gemello del n.1)",
+      "zona": "LABORATORIO / FALEGNAMERIA CNC",
+      "rot": 0,
+      "colori": {
+        "corpo": "#E6E7E4",
+        "cappa": "#2E3134",
+        "fascia": "#7DBA2F"
+      },
+      "aspetto": "come M01; in F 7443 un operatore in nero al banco davanti",
+      "operatore": "lato sud",
+      "flusso": "come M01",
+      "fonti": [
+        "PE",
+        "F 7443",
+        "V f_060"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 33.6,
+        "z": 28.9
+      },
+      "dimensioni": {
+        "w": 6,
+        "d": 4.8,
+        "h": 2.8
+      },
+      "rett_pianta": [
+        30.6,
+        26.5,
+        6,
+        4.8
+      ]
+    },
+    {
+      "id": "M03",
+      "nome": "'county level' (voce della pianta, funzione ignota: armadio utensili / magazzino attrezzi CNC?)",
+      "marca": "",
+      "zona": "LABORATORIO",
+      "rot": 0,
+      "colori": {},
+      "aspetto": "solo rettangolo in pianta; nessuna foto certa",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "PE"
+      ],
+      "confidenza": "bassa",
+      "centro": {
+        "x": 38.25,
+        "z": 29.15
+      },
+      "dimensioni": {
+        "w": 2.1,
+        "d": 4.5,
+        "h": 2
+      },
+      "rett_pianta": [
+        37.2,
+        26.9,
+        2.1,
+        4.5
+      ]
+    },
+    {
+      "id": "M04",
+      "nome": "Foratrice CNC verticale",
+      "marca": "Biesse Brema EKO 2.1 'Milano'",
+      "zona": "FALEGNAMERIA / CNC",
+      "rot": 0,
+      "colori": {
+        "corpo": "#EDEEEA",
+        "fianco": "#7CC242",
+        "porta": "#1E1F20",
+        "led": "#3D6BFF"
+      },
+      "aspetto": "cabina bianca con fianco verde e anta nera con striscia LED blu, monitor su braccio, rulliere bianche a destra e sinistra, sgabello; pannello verticale",
+      "operatore": "lato nord (monitor verso nord)",
+      "flusso": "E-O lungo il muro sud",
+      "fonti": [
+        "PE",
+        "F 7444",
+        "V f_060"
+      ],
+      "confidenza": "alta",
+      "centro": {
+        "x": 34,
+        "z": 38.75
+      },
+      "dimensioni": {
+        "w": 5.4,
+        "d": 2.9,
+        "h": 2.3
+      },
+      "rett_pianta": [
+        31.3,
+        37.3,
+        5.4,
+        2.9
+      ]
+    },
+    {
+      "id": "M05",
+      "nome": "Foratrice da banco",
+      "marca": "",
+      "zona": "FALEGNAMERIA / CNC",
+      "rot": 0,
+      "colori": {
+        "corpo": "#9AA0A4"
+      },
+      "aspetto": "piccola macchina grigia su banco (sfondo F 7444)",
+      "operatore": "lato nord",
+      "flusso": "",
+      "fonti": [
+        "PE",
+        "F 7444 (sfondo)"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 38.95,
+        "z": 39.25
+      },
+      "dimensioni": {
+        "w": 1.5,
+        "d": 0.7,
+        "h": 1.6
+      },
+      "rett_pianta": [
+        38.2,
+        38.9,
+        1.5,
+        0.7
+      ]
+    },
+    {
+      "id": "M06",
+      "nome": "Squadratrice n.1",
+      "marca": "Casolin (scritta sul carro, V f_058)",
+      "zona": "FALEGNAMERIA / CNC",
+      "rot": 0,
+      "colori": {
+        "corpo": "#EFEFEC",
+        "freccia": "#5B9BD5",
+        "carro": "#B5B8BA",
+        "pavimento": "#E8672A"
+      },
+      "aspetto": "banco bianco con freccia azzurra, carro in alluminio lungo ~3.2 m orientato nord-sud, protezione lama sospesa, riquadro arancio a terra",
+      "operatore": "estremita' nord del carro",
+      "flusso": "taglio lungo l'asse z",
+      "fonti": [
+        "PE",
+        "V f_058",
+        "F 7447"
+      ],
+      "confidenza": "alta",
+      "centro": {
+        "x": 42.7,
+        "z": 35.95
+      },
+      "dimensioni": {
+        "w": 3.4,
+        "d": 3.5,
+        "h": 1.3
+      },
+      "rett_pianta": [
+        41,
+        34.2,
+        3.4,
+        3.5
+      ]
+    },
+    {
+      "id": "M07",
+      "nome": "Squadratrice n.2",
+      "marca": "non leggibile (bianca/grigia come Casolin)",
+      "zona": "FALEGNAMERIA / CNC",
+      "rot": 0,
+      "colori": {
+        "corpo": "#E9E9E6",
+        "carro": "#B5B8BA",
+        "pavimento": "#E8672A"
+      },
+      "aspetto": "carro lungo in alluminio, protezione lama con freccia blu, riquadro arancio a terra, carrelli rossi accanto",
+      "operatore": "nord",
+      "flusso": "z",
+      "fonti": [
+        "PE",
+        "F 7445, 7447",
+        "V f_026, f_027"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 48.7,
+        "z": 35.95
+      },
+      "dimensioni": {
+        "w": 3.4,
+        "d": 3.5,
+        "h": 1.3
+      },
+      "rett_pianta": [
+        47,
+        34.2,
+        3.4,
+        3.5
+      ]
+    },
+    {
+      "id": "M08",
+      "nome": "Squadratrice n.3",
+      "marca": "Altendorf (basamento verde, scritta sul fianco)",
+      "zona": "FALEGNAMERIA / CNC",
+      "rot": 0,
+      "colori": {
+        "basamento": "#11845A",
+        "piano": "#B9BCBD"
+      },
+      "aspetto": "basamento verde Altendorf, piano grigio, carro lungo, cassone verde per sfridi accanto",
+      "operatore": "nord",
+      "flusso": "z",
+      "fonti": [
+        "PE",
+        "V f_054"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 53.6,
+        "z": 35.95
+      },
+      "dimensioni": {
+        "w": 3.4,
+        "d": 3.5,
+        "h": 1.3
+      },
+      "rett_pianta": [
+        51.9,
+        34.2,
+        3.4,
+        3.5
+      ]
+    },
+    {
+      "id": "M09",
+      "nome": "Sezionatrice verticale a parete",
+      "marca": "non leggibile",
+      "zona": "FALEGNAMERIA / CNC",
+      "rot": 0,
+      "colori": {
+        "telaio": "#8F9497",
+        "doghe": "#C8A575",
+        "linee": "#C0392B"
+      },
+      "aspetto": "telaio grigio inclinato contro il muro sud con doghe orizzontali in legno e righe rosse, colonna con gruppo lama, pannelli appoggiati in verticale",
+      "operatore": "lato nord",
+      "flusso": "pannelli dal deposito materiali (est) -> squadratrici/CNC (ovest)",
+      "fonti": [
+        "PE",
+        "V f_040, f_042, f_043"
+      ],
+      "confidenza": "alta",
+      "centro": {
+        "x": 57.95,
+        "z": 39.65
+      },
+      "dimensioni": {
+        "w": 5.7,
+        "d": 1.3,
+        "h": 2.9
+      },
+      "rett_pianta": [
+        55.1,
+        39,
+        5.7,
+        1.3
+      ]
+    },
+    {
+      "id": "M10",
+      "nome": "Area a deposito materiali (pannelli in piedi e bancali)",
+      "marca": "",
+      "zona": "FALEGNAMERIA / CNC",
+      "rot": 0,
+      "colori": {
+        "pannelli": "#D8CBB0",
+        "bianchi": "#EDEDEA"
+      },
+      "aspetto": "pannelli appoggiati in verticale, pile di pannelli su bancali, muletto elettrico bianco vicino",
+      "operatore": "",
+      "flusso": "ingresso materiali dalla porta SE (x 62)",
+      "fonti": [
+        "PE",
+        "V f_051, f_052"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 63.6,
+        "z": 36.05
+      },
+      "dimensioni": {
+        "w": 3.4,
+        "d": 3.7,
+        "h": 2.5
+      },
+      "rett_pianta": [
+        61.9,
+        34.2,
+        3.4,
+        3.7
+      ]
+    },
+    {
+      "id": "M11",
+      "nome": "Linea VP Impianti (due unita' con nastro blu e serbatoi a pressione) = 'lucidatrice' della pianta",
+      "marca": "VP Impianti",
+      "zona": "CARTEGGIATURA / LUCIDATURA (lato est)",
+      "rot": 0,
+      "colori": {
+        "cabine": "#DAD8D0",
+        "rulliere": "#2B3F8C",
+        "tubi": "#D9BE6A",
+        "serbatoio": "#B8BCBF"
+      },
+      "aspetto": "due cabinette beige con oblo' scuro, rulliere blu in ingresso/uscita, due serbatoi a pressione (uno zincato, uno nero) a terra, calate aspirazione zincate + tubi spiralati gialli",
+      "operatore": "lato ovest",
+      "flusso": "nord-sud (rulliere lungo z)",
+      "fonti": [
+        "PE (rettangolo 'lucidatrice')",
+        "F 7448"
+      ],
+      "confidenza": "media",
+      "dubbio": "funzione da chiedere (spruzzatura automatica o lucidatura); la pianta chiama questo rettangolo 'lucidatrice'",
+      "centro": {
+        "x": 66.7,
+        "z": 34.9
+      },
+      "dimensioni": {
+        "w": 2,
+        "d": 8,
+        "h": 2.4
+      },
+      "rett_pianta": [
+        65.7,
+        30.9,
+        2,
+        8
+      ]
+    },
+    {
+      "id": "M12",
+      "nome": "Lucidatrice / levigatrice a nastro largo",
+      "marca": "EMC 'Luc line'",
+      "zona": "CARTEGGIATURA / LUCIDATURA (lato est, rettangolo tratteggiato)",
+      "rot": 0,
+      "colori": {
+        "corpo": "#E4E4E0",
+        "scritta": "#2F6DB5",
+        "piano": "#8A6A4A"
+      },
+      "aspetto": "corpo grigio chiaro con logo 'LUC line' e scritta EMC blu, pulpito con schermo, piano di carico con tappeto/tavolo in MDF davanti; alle spalle muro in blocchi di cemento, banco da lavoro a sinistra",
+      "operatore": "lato ovest (carico)",
+      "flusso": "ovest -> est",
+      "fonti": [
+        "PE (area tratteggiata x 59.8-71, z 26.9-30.3)",
+        "V f_039, f_041"
+      ],
+      "confidenza": "bassa",
+      "centro": {
+        "x": 65.8,
+        "z": 28.6
+      },
+      "dimensioni": {
+        "w": 4.5,
+        "d": 2.6,
+        "h": 2.3
+      },
+      "rett_pianta": [
+        63.55,
+        27.3,
+        4.5,
+        2.6
+      ]
+    },
+    {
+      "id": "M13",
+      "nome": "Levigatrice (grande, 5 calate di aspirazione)",
+      "marca": "da verificare (probabile levigatrice robotizzata 2005)",
+      "zona": "CARTEGGIATURA / LUCIDATURA",
+      "rot": 0,
+      "colori": {
+        "corpo": "#D9D9D4",
+        "base": "#5A5D60",
+        "tubi": "#A9ADB0"
+      },
+      "aspetto": "blocco grigio chiaro con due grandi ante, base grigio scuro, 5 calate zincate a pettine sul tetto + collettore, pulpito con monitor a destra, rulliera di carico bianca a sinistra; carrello rosso davanti",
+      "operatore": "lato sud",
+      "flusso": "ovest -> est",
+      "fonti": [
+        "PE",
+        "F 7449"
+      ],
+      "confidenza": "alta",
+      "centro": {
+        "x": 64.65,
+        "z": 24.45
+      },
+      "dimensioni": {
+        "w": 6.7,
+        "d": 3.7,
+        "h": 3
+      },
+      "rett_pianta": [
+        61.3,
+        22.6,
+        6.7,
+        3.7
+      ]
+    },
+    {
+      "id": "M14",
+      "nome": "Robot di verniciatura + forno (linea di verniciatura)",
+      "marca": "Cefla Finishing Spraybotic (robot); forno non visto",
+      "zona": "VERNICIATURA",
+      "rot": 0,
+      "colori": {
+        "corpo": "#E6E4DF",
+        "fascia": "#3C3F42",
+        "logo": "#C8102E",
+        "vetri": "#2A2D30",
+        "pannelli_forno": "#C9CBC8"
+      },
+      "aspetto": "cabina bianca con tre finestre a nastro e fascia grigio scuro alla base, logo Cefla rosso; testa rotante con pistole avvolte in nastro; resto della linea chiuso da pannelli grigi con maniglie (forno/appassimento); calate spiralate e grandi condotte zincate sopra",
+      "operatore": "estremita' est: pulpito Cefla con monitor, tastiera e semaforo + banco a rulli di carico",
+      "flusso": "carico a est (x ~69) -> robot -> forno verso ovest (da confermare)",
+      "fonti": [
+        "PE",
+        "F 7450, 7451, 7452",
+        "V f_033, f_034, f_036, f_037, f_038"
+      ],
+      "confidenza": "alta (posizione) / media (verso del flusso)",
+      "centro": {
+        "x": 59.1,
+        "z": 18.05
+      },
+      "dimensioni": {
+        "w": 20.4,
+        "d": 6.3,
+        "h": 3.6
+      },
+      "rett_pianta": [
+        48.9,
+        14.9,
+        20.4,
+        6.3
+      ]
+    },
+    {
+      "id": "M15",
+      "nome": "Mixer vernici (unita' con due cappe flessibili e quadro con semaforo)",
+      "marca": "",
+      "zona": "VERNICIATURA",
+      "rot": 0,
+      "colori": {
+        "corpo": "#C9CBC8",
+        "latte": "#D32F2F"
+      },
+      "aspetto": "armadio grigio con due cappe aspiranti flessibili, quadro con pulsanti e semaforo, latte di vernice rosse/bianche a terra",
+      "operatore": "lato sud (corridoio)",
+      "flusso": "",
+      "fonti": [
+        "PE ('mixer')",
+        "V f_038"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 59.8,
+        "z": 20.6
+      },
+      "dimensioni": {
+        "w": 2,
+        "d": 1.4,
+        "h": 2.4
+      },
+      "rett_pianta": [
+        58.8,
+        19.9,
+        2,
+        1.4
+      ]
+    },
+    {
+      "id": "M16",
+      "nome": "Carrelli di essiccazione (rastrelliere mobili)",
+      "marca": "",
+      "zona": "VERNICIATURA",
+      "rot": 0,
+      "n": 10,
+      "colori": {
+        "telaio": "#3E6B3A",
+        "bracci": "#3A6FB5",
+        "punte": "#E8C21A"
+      },
+      "aspetto": "carrelli ~1.2 x 1.6 m, telaio verde con ruote, bracci blu a sbalzo con punte gialle, pieni di ante; in file affiancate; in pianta 4 rettangoli a x 42.2-48.2, z 14.6-16.9",
+      "operatore": "",
+      "flusso": "robot/verniciatura -> essiccazione -> carteggiatura",
+      "fonti": [
+        "PE",
+        "V f_018-f_022"
+      ],
+      "confidenza": "alta",
+      "centro": {
+        "x": 45.2,
+        "z": 17.5
+      },
+      "dimensioni": {
+        "w": 6,
+        "d": 6,
+        "h": 1.9
+      },
+      "rett_pianta": [
+        42.2,
+        14.5,
+        6,
+        6
+      ]
+    },
+    {
+      "id": "M17",
+      "nome": "Deposito S.C.H. (armadio/locale sostanze)",
+      "marca": "",
+      "zona": "VERNICIATURA",
+      "rot": 0,
+      "colori": {},
+      "aspetto": "piccolo locale/armadio",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "PE"
+      ],
+      "confidenza": "bassa",
+      "centro": {
+        "x": 37.4,
+        "z": 14.4
+      },
+      "dimensioni": {
+        "w": 2.8,
+        "d": 1.2,
+        "h": 2.2
+      },
+      "rett_pianta": [
+        36,
+        13.8,
+        2.8,
+        1.2
+      ]
+    },
+    {
+      "id": "M18",
+      "nome": "Cabina verniciatura manuale",
+      "marca": "",
+      "zona": "cabina verniciatura",
+      "rot": 0,
+      "colori": {
+        "pareti": "#D9D2C3",
+        "sporco": "#BFB6A3"
+      },
+      "aspetto": "stanza con pareti chiare incrostate di overspray, cavalletti girevoli a tre piedi, portone sezionale sul fondo (verso il magazzino)",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "PE",
+        "F 7454"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 31.25,
+        "z": 16.3
+      },
+      "dimensioni": {
+        "w": 9.3,
+        "d": 6.4,
+        "h": 4.5
+      },
+      "rett_pianta": [
+        26.6,
+        13.1,
+        9.3,
+        6.4
+      ]
+    },
+    {
+      "id": "M19",
+      "nome": "Strettoio per scocche + linea di montaggio",
+      "marca": "Erregi",
+      "zona": "strettoio e linea di montaggio",
+      "rot": 0,
+      "colori": {
+        "portale": "#9EA3A6",
+        "targa": "#2E8B3E",
+        "quadro": "#E1E3E1",
+        "giallo": "#E8C21A"
+      },
+      "aspetto": "portale grigio con quadro elettrico aperto in alto, targa verde ERREGI, pressori gialli, nastro/rulliera lunga verso ovest; scaffali di ferramenta e armadietti scuri accanto; due operatori",
+      "operatore": "lati nord e sud della linea",
+      "flusso": "est -> ovest verso l'imballaggio",
+      "fonti": [
+        "PE",
+        "F 7453"
+      ],
+      "confidenza": "alta",
+      "nota": "portale Erregi a x ~31-34",
+      "centro": {
+        "x": 28.35,
+        "z": 21.6
+      },
+      "dimensioni": {
+        "w": 17.1,
+        "d": 2,
+        "h": 2.6
+      },
+      "rett_pianta": [
+        19.8,
+        20.6,
+        17.1,
+        2
+      ]
+    },
+    {
+      "id": "M20",
+      "nome": "Imballaggio (area banchi)",
+      "marca": "",
+      "zona": "IMBALLAGGIO",
+      "rot": 0,
+      "colori": {},
+      "aspetto": "nessuna foto: illustrativo (banchi, rotoli di cartone, bancali)",
+      "operatore": "",
+      "flusso": "montaggio (est) -> imballaggio -> spedizioni (magazzino a nord)",
+      "fonti": [
+        "PE"
+      ],
+      "confidenza": "bassa",
+      "centro": {
+        "x": 11.7,
+        "z": 21
+      },
+      "dimensioni": {
+        "w": 9.2,
+        "d": 3.8,
+        "h": 1
+      },
+      "rett_pianta": [
+        7.1,
+        19.1,
+        9.2,
+        3.8
+      ]
+    },
+    {
+      "id": "M21",
+      "nome": "Levigabordi",
+      "marca": "De Stefani",
+      "zona": "CARTEGGIATURA / LUCIDATURA",
+      "rot": 0,
+      "colori": {
+        "corpo": "#E3E5E4",
+        "rulli": "#2F5FA8"
+      },
+      "aspetto": "banco lungo grigio chiaro con rulli blu e scritta De Stefani",
+      "operatore": "lato sud",
+      "flusso": "ovest -> est",
+      "fonti": [
+        "PE",
+        "V f_022"
+      ],
+      "confidenza": "alta",
+      "centro": {
+        "x": 44.85,
+        "z": 25.15
+      },
+      "dimensioni": {
+        "w": 4.5,
+        "d": 1.3,
+        "h": 1.4
+      },
+      "rett_pianta": [
+        42.6,
+        24.5,
+        4.5,
+        1.3
+      ]
+    },
+    {
+      "id": "M22",
+      "nome": "Bordatrice",
+      "marca": "Brandt (KDF)",
+      "zona": "CARTEGGIATURA / LUCIDATURA",
+      "rot": 0,
+      "colori": {
+        "corpo": "#F2F2EF",
+        "onda": "#6FA3D8",
+        "logo": "#1B5FAA",
+        "gambe": "#EDEDEA"
+      },
+      "aspetto": "carter bianco con onda azzurra, logo Brandt blu, rulliera di ritorno su gambe bianche, due calate di aspirazione zincate + tubo giallo",
+      "operatore": "estremita' ovest (ingresso)",
+      "flusso": "ovest -> est",
+      "fonti": [
+        "PE",
+        "F 7446",
+        "V f_024, f_025, f_055"
+      ],
+      "confidenza": "alta",
+      "centro": {
+        "x": 45.65,
+        "z": 29.05
+      },
+      "dimensioni": {
+        "w": 6.1,
+        "d": 1.3,
+        "h": 1.6
+      },
+      "rett_pianta": [
+        42.6,
+        28.4,
+        6.1,
+        1.3
+      ]
+    },
+    {
+      "id": "M23",
+      "nome": "Levigatrice a nastro lungo manuale (verde)",
+      "marca": "non leggibile",
+      "zona": "CARTEGGIATURA / FALEGNAMERIA (lato est)",
+      "rot": 0,
+      "colori": {
+        "corpo": "#4F7F52",
+        "piano": "#B08D5B"
+      },
+      "aspetto": "struttura verde con braccio orizzontale lungo e nastro, tavolo mobile, pannelli impilati accanto",
+      "operatore": "lato sud",
+      "flusso": "E-O",
+      "fonti": [
+        "V f_028-f_030, f_040"
+      ],
+      "confidenza": "bassa",
+      "dubbio": "posizione dedotta dalle viste, non disegnata in pianta",
+      "centro": {
+        "x": 58.5,
+        "z": 31.8
+      },
+      "dimensioni": {
+        "w": 7.5,
+        "d": 1.8,
+        "h": 1.8
+      },
+      "rett_pianta": [
+        54.75,
+        30.9,
+        7.5,
+        1.8
+      ]
+    },
+    {
+      "id": "M24",
+      "nome": "Rastrelliere a sbalzo gialle (carteggiatura)",
+      "marca": "",
+      "zona": "CARTEGGIATURA / LUCIDATURA",
+      "rot": 0,
+      "colori": {
+        "montanti": "#D4A017",
+        "bracci": "#A8783E"
+      },
+      "aspetto": "montanti gialli con bracci a sbalzo, pannelli orizzontali impilati (3 campate in pianta)",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "PE (tratteggio)",
+        "V f_028, f_055"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 55.2,
+        "z": 26.25
+      },
+      "dimensioni": {
+        "w": 9.2,
+        "d": 1.3,
+        "h": 3
+      },
+      "rett_pianta": [
+        50.6,
+        25.6,
+        9.2,
+        1.3
+      ]
+    },
+    {
+      "id": "M25",
+      "nome": "Rastrelliere a sbalzo gialle (laboratorio)",
+      "marca": "",
+      "zona": "LABORATORIO",
+      "rot": 0,
+      "colori": {
+        "montanti": "#D4A017",
+        "bracci": "#A8783E"
+      },
+      "aspetto": "3 campate + elemento inclinato a x ~15; pannelli su bracci",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "PE (tratteggio)",
+        "V f_056 (probabile)"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 19.45,
+        "z": 25.9
+      },
+      "dimensioni": {
+        "w": 9.7,
+        "d": 1.5,
+        "h": 3
+      },
+      "rett_pianta": [
+        14.6,
+        25.15,
+        9.7,
+        1.5
+      ]
+    },
+    {
+      "id": "M26",
+      "nome": "Macchine tradizionali di falegnameria (toupie, pialla, colonne verdi)",
+      "marca": "varie",
+      "zona": "FALEGNAMERIA",
+      "rot": 0,
+      "colori": {
+        "toupie": "#1F8FA0",
+        "verdi": "#3E7D4F"
+      },
+      "aspetto": "toupie turchese in primo piano, macchine verdi a colonna, pannelli appoggiati",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "V f_052-f_054"
+      ],
+      "confidenza": "bassa",
+      "centro": {
+        "x": 57,
+        "z": 36.8
+      },
+      "dimensioni": {
+        "w": 3,
+        "d": 2.5,
+        "h": 1.6
+      },
+      "rett_pianta": [
+        55.5,
+        35.55,
+        3,
+        2.5
+      ]
+    },
+    {
+      "id": "M27",
+      "nome": "Avvolgitore per bancali",
+      "marca": "Robopac",
+      "zona": "MAGAZZINO / SPEDIZIONI est",
+      "rot": 0,
+      "colori": {
+        "colonna": "#1F4E9C",
+        "piattaforma": "#8B2E2A"
+      },
+      "aspetto": "colonna blu con carrello film, piattaforma tonda rosso scuro a filo pavimento con rampa",
+      "operatore": "lato nord",
+      "flusso": "",
+      "fonti": [
+        "F 7457, 7458"
+      ],
+      "confidenza": "media",
+      "dubbio": "posizione lungo la parete magazzino/produzione accanto a una porta; x incerta (±8 m)",
+      "centro": {
+        "x": 64.5,
+        "z": 11.6
+      },
+      "dimensioni": {
+        "w": 2.4,
+        "d": 2.4,
+        "h": 2.9
+      },
+      "rett_pianta": [
+        63.3,
+        10.4,
+        2.4,
+        2.4
+      ]
+    },
+    {
+      "id": "M28",
+      "nome": "Area ricarica muletti",
+      "marca": "",
+      "zona": "MAGAZZINO / SPEDIZIONI est",
+      "rot": 0,
+      "colori": {},
+      "aspetto": "caricabatterie a parete, banco blu (V f_017)",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "PE",
+        "V f_017"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 58.3,
+        "z": 12.8
+      },
+      "dimensioni": {
+        "w": 3,
+        "d": 0.8,
+        "h": 1.2
+      },
+      "rett_pianta": [
+        56.8,
+        12.4,
+        3,
+        0.8
+      ]
+    },
+    {
+      "id": "M29",
+      "nome": "Scaffalature porta-pallet magazzino (lungo la parete sud)",
+      "marca": "",
+      "zona": "MAGAZZINO / SPEDIZIONI",
+      "rot": 0,
+      "colori": {
+        "montanti": "#2F5C9E",
+        "correnti": "#E0701E"
+      },
+      "aspetto": "montanti blu/grigi e correnti arancio, bancali, cartoni; tratti a x 21-23.8, 25.8-36.3, 42.3-46, 47.8-58.6, 61.4-70",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "PE",
+        "V f_006-f_013"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 46,
+        "z": 12.6
+      },
+      "dimensioni": {
+        "w": 49,
+        "d": 1.2,
+        "h": 4.5
+      },
+      "rett_pianta": [
+        21.5,
+        12,
+        49,
+        1.2
+      ]
+    },
+    {
+      "id": "M30",
+      "nome": "Scaffalature magazzino ovest (lungo il muro nord + 3 testate N-S)",
+      "marca": "",
+      "zona": "MAGAZZINO / SPEDIZIONI ovest",
+      "rot": 0,
+      "colori": {
+        "montanti": "#2F5C9E",
+        "correnti": "#E0701E"
+      },
+      "aspetto": "fila E-O x 28.8-39 z 4.5-5.9; scaffali N-S a x 38-39.1, 41-42.1, 48.8-49.9 (z 4.3-9.9)",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "PE",
+        "V f_010-f_014"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 33.9,
+        "z": 5.2
+      },
+      "dimensioni": {
+        "w": 10.2,
+        "d": 1.3,
+        "h": 4.5
+      },
+      "rett_pianta": [
+        28.8,
+        4.55,
+        10.2,
+        1.3
+      ]
+    },
+    {
+      "id": "M31",
+      "nome": "Mobili cucina scuri in deposito/esposizione",
+      "marca": "RiFRA (prodotto)",
+      "zona": "locale nord-ovest del magazzino (x 10.3-24.9)",
+      "rot": 0,
+      "colori": {
+        "mobili": "#2B2C2E",
+        "scaffali": "#6B6F73"
+      },
+      "aspetto": "moduli cucina antracite su ruote, colonne scure, scaffalatura metallica sul muro nord con finestre, cassa legno 'baldi porte', porta aperta sul verde",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "F 7460",
+        "V f_004, f_005"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 17.5,
+        "z": 5.5
+      },
+      "dimensioni": {
+        "w": 10,
+        "d": 6,
+        "h": 2.2
+      },
+      "rett_pianta": [
+        12.5,
+        2.5,
+        10,
+        6
+      ]
+    },
+    {
+      "id": "M32",
+      "nome": "Magazzino attrezzature montatori (sotto il soppalco)",
+      "marca": "",
+      "zona": "MAGAZZINO ATTREZZATURE MONTATORI",
+      "rot": 0,
+      "colori": {
+        "pareti": "#3B3E42"
+      },
+      "aspetto": "stanza chiusa sotto il soppalco; scala di accesso al soppalco sul lato est",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "PE"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 20.7,
+        "z": 16.25
+      },
+      "dimensioni": {
+        "w": 6.2,
+        "d": 6.3,
+        "h": 3.2
+      },
+      "rett_pianta": [
+        17.6,
+        13.1,
+        6.2,
+        6.3
+      ]
+    },
+    {
+      "id": "M33",
+      "nome": "Area break + archivio (sotto il soppalco)",
+      "marca": "",
+      "zona": "AREA BREAK / ARCHIVIO",
+      "rot": 0,
+      "colori": {
+        "pareti": "#3B3E42"
+      },
+      "aspetto": "pareti antracite, porta con luce e finestra (V f_069)",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "PE",
+        "V f_069"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 11.7,
+        "z": 16.05
+      },
+      "dimensioni": {
+        "w": 8.8,
+        "d": 6.1,
+        "h": 3.2
+      },
+      "rett_pianta": [
+        7.3,
+        13,
+        8.8,
+        6.1
+      ]
+    },
+    {
+      "id": "M34",
+      "nome": "Uffici: reception, ufficio tecnico con plotter, sala riunioni, corridoio vetrato",
+      "marca": "",
+      "zona": "UFFICI",
+      "rot": 0,
+      "colori": {
+        "pavimento": "#CFCBC4",
+        "legno": "#B8703A",
+        "scuro": "#2A2A2A",
+        "vetro": "#9FB3BF"
+      },
+      "aspetto": "pavimento lucido grigio chiaro, parete in legno arancio caldo, bancone scuro, orologio a pendolo, scala con gradini illuminati, pareti vetrate, tavolo riunioni bianco lungo con 10 sedie nere (F 7469-7470), plotter e disegni appesi (F 7464)",
+      "operatore": "",
+      "flusso": "",
+      "fonti": [
+        "PE",
+        "F 7461-7471"
+      ],
+      "confidenza": "media",
+      "nota": "reception ~(3, 12.5); ufficio tecnico (0-10.3, 0-6.2); sala riunioni (0-5.3, 24.5-29.9); uffici z 13.3-16.8, 29.9-34.9, 37-40.6; bagni 16.8-20.4; spogliatoio 20.4-24.5; sala pranzo 34.9-37",
+      "centro": {
+        "x": 5,
+        "z": 20
+      },
+      "dimensioni": {
+        "w": 10.3,
+        "d": 40.6,
+        "h": 3
+      },
+      "rett_pianta": [
+        -0.15,
+        -0.3,
+        10.3,
+        40.6
+      ]
+    },
+    {
+      "id": "E01",
+      "nome": "Pensilina (tettoia di carico lungo il muro est)",
+      "marca": "",
+      "zona": "esterno est",
+      "rot": 0,
+      "colori": {
+        "tetto": "#8E9296"
+      },
+      "aspetto": "tetto piano grigio su pilastri, davanti al portone sezionale del magazzino",
+      "fonti": [
+        "PE (tratteggio)",
+        "satellite",
+        "E earth-vista-da-nord"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 72.9,
+        "z": 13.2
+      },
+      "dimensioni": {
+        "w": 4,
+        "d": 15.6,
+        "h": 4.5
+      },
+      "rett_pianta": [
+        70.9,
+        5.4,
+        4,
+        15.6
+      ]
+    },
+    {
+      "id": "E02",
+      "nome": "Serbatoio aria compressa + compressori",
+      "marca": "",
+      "zona": "esterno est",
+      "rot": 0,
+      "colori": {
+        "serbatoio": "#B8BCBF"
+      },
+      "aspetto": "serbatoio verticale d 0.8 m a (71.8, 20.5) + cassoni compressori",
+      "fonti": [
+        "PE"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 72.4,
+        "z": 21.3
+      },
+      "dimensioni": {
+        "w": 1.8,
+        "d": 3,
+        "h": 2.5
+      },
+      "rett_pianta": [
+        71.5,
+        19.8,
+        1.8,
+        3
+      ]
+    },
+    {
+      "id": "E03",
+      "nome": "Filtri polveri (2)",
+      "marca": "",
+      "zona": "esterno est",
+      "rot": 0,
+      "colori": {
+        "corpo": "#C9CBC8",
+        "telaio": "#4F7F52"
+      },
+      "aspetto": "due moduli filtranti affiancati (2.7 x 2 m ciascuno) con tramogge, collegati alle condotte zincate",
+      "fonti": [
+        "PE"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 76.25,
+        "z": 20.4
+      },
+      "dimensioni": {
+        "w": 2.7,
+        "d": 4,
+        "h": 6.5
+      },
+      "rett_pianta": [
+        74.9,
+        18.4,
+        2.7,
+        4
+      ]
+    },
+    {
+      "id": "E04",
+      "nome": "Magazzino container (2)",
+      "marca": "",
+      "zona": "esterno est",
+      "rot": 0,
+      "colori": {
+        "lamiera": "#6E6A5E",
+        "legno": "#7A5A3A"
+      },
+      "aspetto": "due container 20' in fila (z 18.4-24.3 e 24.3-30.3); in V f_045-f_046 si vede anche una baracca in legno con tetto curvo in lamiera ondulata",
+      "fonti": [
+        "PE",
+        "V f_045, f_046"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 79.75,
+        "z": 24.35
+      },
+      "dimensioni": {
+        "w": 2.9,
+        "d": 11.9,
+        "h": 2.6
+      },
+      "rett_pianta": [
+        78.3,
+        18.4,
+        2.9,
+        11.9
+      ]
+    },
+    {
+      "id": "E05",
+      "nome": "Centrale termica",
+      "marca": "",
+      "zona": "esterno est, addossata al muro",
+      "rot": 0,
+      "colori": {
+        "muro": "#BDBAB2"
+      },
+      "aspetto": "locale in muratura intonacata con griglie di ventilazione; lato hall in blocchi di cemento (sfondo di F 7448 e V f_041)",
+      "fonti": [
+        "PE",
+        "V f_045, f_048"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 73,
+        "z": 27.5
+      },
+      "dimensioni": {
+        "w": 3.8,
+        "d": 6.9,
+        "h": 4
+      },
+      "rett_pianta": [
+        71.1,
+        24.05,
+        3.8,
+        6.9
+      ]
+    },
+    {
+      "id": "E06",
+      "nome": "Silo polveri",
+      "marca": "",
+      "zona": "esterno est",
+      "rot": 0,
+      "colori": {
+        "pannelli": "#E3E1DA",
+        "telaio": "#5E9A5A"
+      },
+      "aspetto": "ottagonale, pannelli chiari, montanti verdi, scala alla marinara con gabbia, due pianerottoli, parapetto in cima, porta alla base, cartello 'ricevimento ->' vicino",
+      "fonti": [
+        "PE",
+        "V f_047, f_048",
+        "E silo, earth-vista-da-nord"
+      ],
+      "confidenza": "alta",
+      "centro": {
+        "x": 74.4,
+        "z": 36
+      },
+      "dimensioni": {
+        "w": 4.4,
+        "d": 4.4,
+        "h": 14
+      },
+      "rett_pianta": [
+        72.2,
+        33.8,
+        4.4,
+        4.4
+      ]
+    },
+    {
+      "id": "E07",
+      "nome": "Deposito vernici",
+      "marca": "",
+      "zona": "esterno est",
+      "rot": -30,
+      "colori": {},
+      "aspetto": "piccolo box ruotato come il confine",
+      "fonti": [
+        "PE"
+      ],
+      "confidenza": "bassa",
+      "centro": {
+        "x": 93,
+        "z": 22.3
+      },
+      "dimensioni": {
+        "w": 3,
+        "d": 2,
+        "h": 2.4
+      },
+      "rett_pianta": [
+        91.5,
+        21.3,
+        3,
+        2
+      ]
+    },
+    {
+      "id": "E08",
+      "nome": "Cassone rifiuti (pianta) ",
+      "marca": "",
+      "zona": "esterno est",
+      "rot": -30,
+      "colori": {
+        "corpo": "#2F5C9E"
+      },
+      "aspetto": "cassone scarrabile blu",
+      "fonti": [
+        "PE"
+      ],
+      "confidenza": "bassa",
+      "centro": {
+        "x": 96.5,
+        "z": 18.8
+      },
+      "dimensioni": {
+        "w": 5.5,
+        "d": 2.5,
+        "h": 2
+      },
+      "rett_pianta": [
+        93.75,
+        17.55,
+        5.5,
+        2.5
+      ]
+    },
+    {
+      "id": "E09",
+      "nome": "Cassone scarrabile blu + furgone bianco Iveco (davanti alla porta SE)",
+      "marca": "",
+      "zona": "fascia sud",
+      "rot": 0,
+      "colori": {
+        "cassone": "#2F5C9E",
+        "furgone": "#F2F2F2"
+      },
+      "aspetto": "cassone blu arrugginito e furgone bianco parcheggiati lungo la facciata sud",
+      "fonti": [
+        "V f_049"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 66,
+        "z": 44
+      },
+      "dimensioni": {
+        "w": 6,
+        "d": 2.5,
+        "h": 2.2
+      },
+      "rett_pianta": [
+        63,
+        42.75,
+        6,
+        2.5
+      ]
+    },
+    {
+      "id": "E10",
+      "nome": "Cabina ENEL",
+      "marca": "",
+      "zona": "esterno SE",
+      "rot": 0,
+      "colori": {
+        "muro": "#CFCBC0"
+      },
+      "aspetto": "box in cemento con griglie",
+      "fonti": [
+        "PE",
+        "V f_045 (probabile)"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 79.5,
+        "z": 47.9
+      },
+      "dimensioni": {
+        "w": 3.5,
+        "d": 3.5,
+        "h": 3
+      },
+      "rett_pianta": [
+        77.75,
+        46.15,
+        3.5,
+        3.5
+      ]
+    },
+    {
+      "id": "E11",
+      "nome": "Cabina elettrica",
+      "marca": "",
+      "zona": "esterno SE",
+      "rot": 0,
+      "colori": {
+        "muro": "#CFCBC0"
+      },
+      "aspetto": "box in cemento",
+      "fonti": [
+        "PE"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 83.5,
+        "z": 46
+      },
+      "dimensioni": {
+        "w": 4.5,
+        "d": 3.8,
+        "h": 3
+      },
+      "rett_pianta": [
+        81.25,
+        44.1,
+        4.5,
+        3.8
+      ]
+    },
+    {
+      "id": "E12",
+      "nome": "Contatori gas",
+      "marca": "",
+      "zona": "esterno SE",
+      "rot": 0,
+      "colori": {},
+      "aspetto": "armadietto",
+      "fonti": [
+        "PE"
+      ],
+      "confidenza": "media",
+      "centro": {
+        "x": 74.7,
+        "z": 49.3
+      },
+      "dimensioni": {
+        "w": 2,
+        "d": 0.6,
+        "h": 1.5
+      },
+      "rett_pianta": [
+        73.7,
+        49,
+        2,
+        0.6
+      ]
+    }
+  ],
+  "riprese": [
+    {
+      "id": "IMG_7440",
+      "tipo": "F",
+      "camera": null,
+      "direzione_gradi": null,
+      "zona": "cartello piano di evacuazione (posizione del cartello non determinabile)",
+      "vede": "pianta di evacuazione completa (terza foto della pianta)",
+      "confidenza": "-"
+    },
+    {
+      "id": "IMG_7441",
+      "tipo": "F",
+      "camera": {
+        "x": 14,
+        "z": 33.5
+      },
+      "direzione_gradi": 90,
+      "zona": "FALEGNAMERIA / CNC, corridoio E-O z 33",
+      "vede": "corridoio lungo verso est, carrelli rossi con ante, a sinistra i Biesse (cappa verde) e banchi, calate aspirazione, soffitto grigio con LED",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7442",
+      "tipo": "F",
+      "camera": {
+        "x": 26,
+        "z": 34.5
+      },
+      "direzione_gradi": 0,
+      "zona": "LABORATORIO",
+      "vede": "M01 Biesse Rover A di fronte, pulpito a sinistra, banco in truciolare, righe gialle; sullo sfondo in alto a sinistra ringhiera gialla del soppalco",
+      "confidenza": "alta"
+    },
+    {
+      "id": "IMG_7443",
+      "tipo": "F",
+      "camera": {
+        "x": 30,
+        "z": 35
+      },
+      "direzione_gradi": 20,
+      "zona": "LABORATORIO",
+      "vede": "M01/M02 Biesse, operatore in nero al banco, tavolo in truciolare in primo piano",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7444",
+      "tipo": "F",
+      "camera": {
+        "x": 34,
+        "z": 34
+      },
+      "direzione_gradi": 180,
+      "zona": "FALEGNAMERIA / CNC",
+      "vede": "M04 Brema EKO 2.1, finestre del muro sud dietro, foratrice da banco (M05) a sinistra sullo sfondo, sgabello",
+      "confidenza": "alta"
+    },
+    {
+      "id": "IMG_7445",
+      "tipo": "F",
+      "camera": {
+        "x": 48,
+        "z": 33
+      },
+      "direzione_gradi": 180,
+      "zona": "FALEGNAMERIA / CNC",
+      "vede": "squadratrice (M07) con riquadro arancio a terra, pannelli appoggiati, finestre sud",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7446",
+      "tipo": "F",
+      "camera": {
+        "x": 41.5,
+        "z": 31
+      },
+      "direzione_gradi": 60,
+      "zona": "CARTEGGIATURA / LUCIDATURA",
+      "vede": "M22 Brandt da ovest, rastrelliere e pile di pannelli (M24) dietro, a sinistra in fondo il magazzino chiaro",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7447",
+      "tipo": "F",
+      "camera": {
+        "x": 47.5,
+        "z": 31.5
+      },
+      "direzione_gradi": 180,
+      "zona": "FALEGNAMERIA / CNC",
+      "vede": "squadratrice M07 con carro lungo, Casolin M06 a destra, carrelli rossi, finestre del muro sud, calate zincate",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7448",
+      "tipo": "F",
+      "camera": {
+        "x": 57,
+        "z": 35
+      },
+      "direzione_gradi": 90,
+      "zona": "CARTEGGIATURA / LUCIDATURA lato est",
+      "vede": "M11 linea VP Impianti (rulliere blu, due unita', serbatoi a pressione); dietro muro in blocchi (centrale termica, E05), locale con porta verde a destra (locale tecnico), a sinistra armadi rossi e uscita sul muro est; finestre del muro sud a destra",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7449",
+      "tipo": "F",
+      "camera": {
+        "x": 62,
+        "z": 33
+      },
+      "direzione_gradi": 5,
+      "zona": "CARTEGGIATURA / LUCIDATURA",
+      "vede": "M13 levigatrice con 5 calate, rulliera di carico, carrello rosso; sullo sfondo a sinistra il Cefla Spraybotic (M14); a destra armadi rossi e scaffali lungo il muro est",
+      "confidenza": "alta"
+    },
+    {
+      "id": "IMG_7450",
+      "tipo": "F",
+      "camera": {
+        "x": 60,
+        "z": 25
+      },
+      "direzione_gradi": 0,
+      "zona": "VERNICIATURA",
+      "vede": "M14 Cefla Spraybotic di fronte (tre finestre), barattoli di vernice rossi e bianchi a destra, lucernario",
+      "confidenza": "alta"
+    },
+    {
+      "id": "IMG_7451",
+      "tipo": "F",
+      "camera": {
+        "x": 58,
+        "z": 22
+      },
+      "direzione_gradi": 0,
+      "zona": "VERNICIATURA",
+      "vede": "interno del robot attraverso il vetro: testa rotante con pistole avvolte nel nastro",
+      "confidenza": "alta"
+    },
+    {
+      "id": "IMG_7452",
+      "tipo": "F",
+      "camera": {
+        "x": 68.5,
+        "z": 23.5
+      },
+      "direzione_gradi": 315,
+      "zona": "VERNICIATURA (estremita' est)",
+      "vede": "pulpito Cefla con monitor, tastiera e semaforo; operatore con grembiule blu al banco a rulli di carico",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7453",
+      "tipo": "F",
+      "camera": {
+        "x": 38,
+        "z": 22
+      },
+      "direzione_gradi": 270,
+      "zona": "strettoio e linea di montaggio",
+      "vede": "M19 Erregi (portale grigio, quadro aperto), due operatori, scaffali ferramenta, armadietti scuri; in fondo a destra ringhiera gialla del soppalco",
+      "confidenza": "alta"
+    },
+    {
+      "id": "IMG_7454",
+      "tipo": "F",
+      "camera": {
+        "x": 31,
+        "z": 20
+      },
+      "direzione_gradi": 0,
+      "zona": "cabina verniciatura",
+      "vede": "M18: stanza con pareti incrostate, cavalletti girevoli, portone sezionale sul fondo",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7456",
+      "tipo": "F",
+      "camera": {
+        "x": 28,
+        "z": 9
+      },
+      "direzione_gradi": 90,
+      "zona": "MAGAZZINO / SPEDIZIONI",
+      "vede": "corridoio lungo del magazzino verso est: finestre sul muro nord a sinistra, porta verde al gradino, portone sezionale sul fondo, a destra parete con finestre alte a lamelle, banchi e lavasciuga",
+      "confidenza": "alta"
+    },
+    {
+      "id": "IMG_7457",
+      "tipo": "F",
+      "camera": {
+        "x": 68,
+        "z": 10
+      },
+      "direzione_gradi": 270,
+      "zona": "MAGAZZINO / SPEDIZIONI est",
+      "vede": "M27 Robopac a sinistra, scaffali con bancali a destra, corridoio verso ovest",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7458",
+      "tipo": "F",
+      "camera": {
+        "x": 64.5,
+        "z": 9.5
+      },
+      "direzione_gradi": 180,
+      "zona": "MAGAZZINO / SPEDIZIONI est",
+      "vede": "M27 Robopac da vicino, porta grigia nella parete verso la produzione, finestra a lamelle sopra",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7459",
+      "tipo": "F",
+      "camera": {
+        "x": 25,
+        "z": 23.4
+      },
+      "direzione_gradi": 90,
+      "zona": "corridoio montaggio (z 23.4)",
+      "vede": "scaffali gialli con ferramenta a sinistra, carrelli con ante, corridoio lungo verso est, pareti antracite",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "IMG_7460",
+      "tipo": "F",
+      "camera": {
+        "x": 15,
+        "z": 8
+      },
+      "direzione_gradi": 10,
+      "zona": "locale nord-ovest del magazzino",
+      "vede": "M31 mobili cucina scuri, scaffalatura sul muro nord con finestre, porta aperta sul verde a destra",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7461",
+      "tipo": "F",
+      "camera": {
+        "x": 3,
+        "z": 13
+      },
+      "direzione_gradi": 0,
+      "zona": "UFFICI INGRESSO",
+      "vede": "reception: bancone scuro, orologio a pendolo, vetrate, piante",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7462",
+      "tipo": "F",
+      "camera": {
+        "x": 4,
+        "z": 12.5
+      },
+      "direzione_gradi": 90,
+      "zona": "UFFICI INGRESSO",
+      "vede": "fotocopiatrice, porta bianca, parete in legno arancio, corridoio",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7463",
+      "tipo": "F",
+      "camera": {
+        "x": 5,
+        "z": 4
+      },
+      "direzione_gradi": 0,
+      "zona": "UFFICIO TECNICO / COMMERCIALE (o primo piano)",
+      "vede": "scrivanie scure, finestre a nastro, lampada a sospensione",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "IMG_7464",
+      "tipo": "F",
+      "camera": {
+        "x": 8,
+        "z": 5
+      },
+      "direzione_gradi": 300,
+      "zona": "UFFICIO TECNICO (o primo piano)",
+      "vede": "open space con plotter, disegni appesi, finestre a nastro",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "IMG_7465",
+      "tipo": "F",
+      "camera": {
+        "x": -7,
+        "z": -6
+      },
+      "direzione_gradi": 135,
+      "zona": "esterno, piazzale nord-ovest",
+      "vede": "blocco uffici a due piani con vetrate; scritta RIFRA sulla facciata NORD (sinistra) e sulla facciata OVEST (destra, vicino all'ingresso con pensilina); a sinistra il magazzino basso con finestre; a destra il vialetto ovest con auto in fila",
+      "confidenza": "alta"
+    },
+    {
+      "id": "IMG_7466",
+      "tipo": "F",
+      "camera": {
+        "x": 6,
+        "z": 12
+      },
+      "direzione_gradi": 90,
+      "zona": "UFFICI INGRESSO",
+      "vede": "scala con gradini illuminati verso il primo piano, orologio a pendolo a sinistra",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7467",
+      "tipo": "F",
+      "camera": {
+        "x": 9,
+        "z": 10.8
+      },
+      "direzione_gradi": 270,
+      "zona": "scala uffici (dal primo piano)",
+      "vede": "scala in discesa con luci nei gradini",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7468",
+      "tipo": "F",
+      "camera": {
+        "x": 4,
+        "z": 8
+      },
+      "direzione_gradi": 180,
+      "zona": "uffici (probabile primo piano)",
+      "vede": "corridoio con pareti vetrate sugli uffici",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "IMG_7469",
+      "tipo": "F",
+      "camera": {
+        "x": 3.5,
+        "z": 23.8
+      },
+      "direzione_gradi": 180,
+      "zona": "SALA RIUNIONI",
+      "vede": "tavolo riunioni lungo bianco, sedie nere, schermo a parete, finestre sul lato ovest",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7470",
+      "tipo": "F",
+      "camera": {
+        "x": 4,
+        "z": 24
+      },
+      "direzione_gradi": 200,
+      "zona": "SALA RIUNIONI",
+      "vede": "come 7469, pannello nero con foto cucine",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_7471",
+      "tipo": "F",
+      "camera": {
+        "x": 4,
+        "z": 18
+      },
+      "direzione_gradi": 0,
+      "zona": "corridoio uffici",
+      "vede": "corridoio con uffici vetrati a destra, persone al lavoro",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "IMG_0009",
+      "tipo": "F",
+      "camera": null,
+      "direzione_gradi": null,
+      "zona": "cartello piano di evacuazione",
+      "vede": "pianta intera (usata per la rettifica)",
+      "confidenza": "-"
+    },
+    {
+      "id": "IMG_0010",
+      "tipo": "F",
+      "camera": null,
+      "direzione_gradi": null,
+      "zona": "cartello piano di evacuazione",
+      "vede": "pianta intera (seconda inquadratura)",
+      "confidenza": "-"
+    },
+    {
+      "id": "IMG_0011",
+      "tipo": "X",
+      "camera": {
+        "x": 7.5,
+        "z": 32
+      },
+      "direzione_gradi": 270,
+      "zona": "corridoio ovest, davanti agli uffici",
+      "vede": "finestra su un ufficio illuminato, cassetta pronto soccorso Hilti rossa",
+      "confidenza": "media"
+    },
+    {
+      "id": "IMG_0012a",
+      "tipo": "X",
+      "camera": {
+        "x": 5,
+        "z": 43.5
+      },
+      "direzione_gradi": 0,
+      "zona": "fascia sud, estremita' ovest",
+      "vede": "facciata sud: finestre a lamelle, portone scorrevole bianco con oblo', porta pedonale con pensilina nera, moto verde",
+      "confidenza": "alta"
+    },
+    {
+      "id": "IMG_0012b",
+      "tipo": "X",
+      "camera": {
+        "x": 0.5,
+        "z": 41.5
+      },
+      "direzione_gradi": 0,
+      "zona": "spigolo SO -> vialetto ovest",
+      "vede": "vialetto in autobloccanti largo ~5 m, auto parcheggiate in fila lungo la recinzione (muso verso sud), cartello '<- uffici' sul muro, finestre della striscia uffici, in fondo il blocco a due piani e alberi",
+      "confidenza": "alta"
+    },
+    {
+      "id": "IMG_0013",
+      "tipo": "X",
+      "camera": {
+        "x": 20,
+        "z": 22.5
+      },
+      "direzione_gradi": 0,
+      "zona": "davanti al blocco sotto il soppalco",
+      "vede": "scaffali gialli con ferramenta, carrelli, pareti grigie, porta, lavabo",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "E streetview-ingresso-17",
+      "tipo": "E",
+      "camera": {
+        "x": 20,
+        "z": 50
+      },
+      "direzione_gradi": 0,
+      "zona": "via F.lli Cervi",
+      "vede": "panoramica (deformata) della facciata sud: pilastro civico 17 con pensilina e targa RIFRA, portone sezionale, silo a destra, blocco uffici a sinistra",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "E streetview-facciata-cancello",
+      "tipo": "E",
+      "camera": {
+        "x": 5,
+        "z": 49
+      },
+      "direzione_gradi": 0,
+      "zona": "via F.lli Cervi, estremita' ovest",
+      "vede": "facciata sud vicino allo spigolo SO: porta con pensilina, finestra, portone scorrevole bianco; auto perpendicolari nel cortile a sinistra",
+      "confidenza": "media"
+    },
+    {
+      "id": "E silo",
+      "tipo": "E",
+      "camera": {
+        "x": 80,
+        "z": 42
+      },
+      "direzione_gradi": 300,
+      "zona": "cortile est",
+      "vede": "silo ottagonale E06",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_001",
+      "tipo": "V",
+      "camera": {
+        "x": 5,
+        "z": 7
+      },
+      "direzione_gradi": 0,
+      "zona": "uffici (blocco NO)",
+      "vede": "scrivania scura con scatole, finestre con tende",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_002",
+      "tipo": "V",
+      "camera": {
+        "x": 8,
+        "z": 8
+      },
+      "direzione_gradi": 90,
+      "zona": "uffici (blocco NO)",
+      "vede": "scaffale/archivio (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_003",
+      "tipo": "V",
+      "camera": {
+        "x": 10,
+        "z": 8.5
+      },
+      "direzione_gradi": 90,
+      "zona": "porta uffici -> magazzino",
+      "vede": "porta scura",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_004",
+      "tipo": "V",
+      "camera": {
+        "x": 11.5,
+        "z": 8
+      },
+      "direzione_gradi": 70,
+      "zona": "locale nord-ovest del magazzino",
+      "vede": "moduli cucina scuri, pavimento chiaro",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_005",
+      "tipo": "V",
+      "camera": {
+        "x": 13,
+        "z": 8.5
+      },
+      "direzione_gradi": 30,
+      "zona": "locale nord-ovest del magazzino",
+      "vede": "M31 mobili cucina scuri, scaffali, porta aperta sul verde, cassa 'baldi porte'",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_006",
+      "tipo": "V",
+      "camera": {
+        "x": 19,
+        "z": 10
+      },
+      "direzione_gradi": 90,
+      "zona": "MAGAZZINO / SPEDIZIONI",
+      "vede": "corridoio lungo verso est, scaffali con bancali a destra, portone sezionale sul fondo",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_007",
+      "tipo": "V",
+      "camera": {
+        "x": 22,
+        "z": 10
+      },
+      "direzione_gradi": 90,
+      "zona": "MAGAZZINO / SPEDIZIONI",
+      "vede": "banchi, carrelli, scaffali, cartoni",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_008",
+      "tipo": "V",
+      "camera": {
+        "x": 25,
+        "z": 10
+      },
+      "direzione_gradi": 90,
+      "zona": "MAGAZZINO / SPEDIZIONI",
+      "vede": "bancali, scaffali, colonne, finestre a lamelle",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_009",
+      "tipo": "V",
+      "camera": {
+        "x": 28,
+        "z": 10
+      },
+      "direzione_gradi": 90,
+      "zona": "MAGAZZINO / SPEDIZIONI",
+      "vede": "bancali, transpallet, persona",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_010",
+      "tipo": "V",
+      "camera": {
+        "x": 31,
+        "z": 10
+      },
+      "direzione_gradi": 90,
+      "zona": "MAGAZZINO / SPEDIZIONI",
+      "vede": "transpallet rosso, carrelli",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_011",
+      "tipo": "V",
+      "camera": {
+        "x": 34,
+        "z": 9.5
+      },
+      "direzione_gradi": 60,
+      "zona": "MAGAZZINO / SPEDIZIONI",
+      "vede": "fusti blu, scaffali sul muro nord con finestre, transpallet",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_012",
+      "tipo": "V",
+      "camera": {
+        "x": 37,
+        "z": 10
+      },
+      "direzione_gradi": 90,
+      "zona": "MAGAZZINO / SPEDIZIONI",
+      "vede": "corridoio (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_013",
+      "tipo": "V",
+      "camera": {
+        "x": 39,
+        "z": 10
+      },
+      "direzione_gradi": 80,
+      "zona": "MAGAZZINO / SPEDIZIONI",
+      "vede": "banchi di lavoro, persona (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_014",
+      "tipo": "V",
+      "camera": {
+        "x": 42,
+        "z": 9
+      },
+      "direzione_gradi": 90,
+      "zona": "MAGAZZINO / SPEDIZIONI (gradino x 50)",
+      "vede": "porta verde nel muro al gradino, finestre alte strette a sinistra, portone sezionale sul fondo, quadro elettrico su colonna",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_015",
+      "tipo": "V",
+      "camera": {
+        "x": 46,
+        "z": 9.5
+      },
+      "direzione_gradi": 90,
+      "zona": "MAGAZZINO / SPEDIZIONI est",
+      "vede": "portone sezionale sul fondo, finestre",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_016",
+      "tipo": "V",
+      "camera": {
+        "x": 50,
+        "z": 10
+      },
+      "direzione_gradi": 90,
+      "zona": "MAGAZZINO / SPEDIZIONI est",
+      "vede": "portone sezionale, scala a pioli, pannelli",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_017",
+      "tipo": "V",
+      "camera": {
+        "x": 51,
+        "z": 11.5
+      },
+      "direzione_gradi": 180,
+      "zona": "MAGAZZINO est",
+      "vede": "banco blu (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_018",
+      "tipo": "V",
+      "camera": {
+        "x": 48.5,
+        "z": 13.3
+      },
+      "direzione_gradi": 200,
+      "zona": "porta magazzino -> verniciatura",
+      "vede": "attraverso la porta: carrelli di essiccazione blu, latte di vernice, parete grigia",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_019",
+      "tipo": "V",
+      "camera": {
+        "x": 47,
+        "z": 16
+      },
+      "direzione_gradi": 240,
+      "zona": "VERNICIATURA",
+      "vede": "M16 carrelli di essiccazione pieni di ante, lucernario",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_020",
+      "tipo": "V",
+      "camera": {
+        "x": 46,
+        "z": 18.5
+      },
+      "direzione_gradi": 220,
+      "zona": "VERNICIATURA",
+      "vede": "carrelli di essiccazione, calate zincate, parete antracite",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_021",
+      "tipo": "V",
+      "camera": {
+        "x": 45,
+        "z": 20.5
+      },
+      "direzione_gradi": 200,
+      "zona": "VERNICIATURA",
+      "vede": "carrelli verdi con bracci blu (ravvicinati)",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_022",
+      "tipo": "V",
+      "camera": {
+        "x": 49,
+        "z": 26.3
+      },
+      "direzione_gradi": 270,
+      "zona": "CARTEGGIATURA",
+      "vede": "M21 De Stefani a destra, carrelli di essiccazione a sinistra, scaffali in fondo",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_023",
+      "tipo": "V",
+      "camera": {
+        "x": 47,
+        "z": 27
+      },
+      "direzione_gradi": 180,
+      "zona": "CARTEGGIATURA",
+      "vede": "pavimento (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_024",
+      "tipo": "V",
+      "camera": {
+        "x": 47,
+        "z": 27.5
+      },
+      "direzione_gradi": 200,
+      "zona": "CARTEGGIATURA",
+      "vede": "M22 Brandt ravvicinata",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_025",
+      "tipo": "V",
+      "camera": {
+        "x": 49.5,
+        "z": 28.6
+      },
+      "direzione_gradi": 270,
+      "zona": "CARTEGGIATURA",
+      "vede": "M22 Brandt in fuga, pallet di pannelli, macchine bianche in fondo",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_026",
+      "tipo": "V",
+      "camera": {
+        "x": 50,
+        "z": 31
+      },
+      "direzione_gradi": 150,
+      "zona": "FALEGNAMERIA",
+      "vede": "carrelli rossi, righe arancio a terra (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_027",
+      "tipo": "V",
+      "camera": {
+        "x": 52,
+        "z": 32
+      },
+      "direzione_gradi": 200,
+      "zona": "FALEGNAMERIA",
+      "vede": "pannelli in piedi, carrelli, carro di squadratrice",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_028",
+      "tipo": "V",
+      "camera": {
+        "x": 52,
+        "z": 28
+      },
+      "direzione_gradi": 90,
+      "zona": "CARTEGGIATURA",
+      "vede": "M24 rastrelliere a sbalzo con pannelli, pile di pannelli, M23 levigatrice verde in fondo",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_029",
+      "tipo": "V",
+      "camera": {
+        "x": 54,
+        "z": 29.5
+      },
+      "direzione_gradi": 90,
+      "zona": "CARTEGGIATURA",
+      "vede": "pile di pannelli, macchina verde, macchine bianche (VP/EMC) a destra in fondo",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_030",
+      "tipo": "V",
+      "camera": {
+        "x": 56,
+        "z": 30.5
+      },
+      "direzione_gradi": 80,
+      "zona": "CARTEGGIATURA",
+      "vede": "M23 levigatrice a nastro lungo verde, carrelli, piano pannelli",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_031",
+      "tipo": "V",
+      "camera": {
+        "x": 60,
+        "z": 28
+      },
+      "direzione_gradi": 20,
+      "zona": "CARTEGGIATURA",
+      "vede": "motore verde, carrelli (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_032",
+      "tipo": "V",
+      "camera": {
+        "x": 65,
+        "z": 26
+      },
+      "direzione_gradi": 60,
+      "zona": "CARTEGGIATURA / VERNICIATURA, muro est",
+      "vede": "banchi con rotoli di carta abrasiva, armadio rosso, uscita di emergenza sul muro est",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_033",
+      "tipo": "V",
+      "camera": {
+        "x": 66,
+        "z": 25
+      },
+      "direzione_gradi": 300,
+      "zona": "VERNICIATURA",
+      "vede": "M14 Cefla Spraybotic con banco a rulli davanti",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_034",
+      "tipo": "V",
+      "camera": {
+        "x": 66,
+        "z": 24
+      },
+      "direzione_gradi": 300,
+      "zona": "VERNICIATURA",
+      "vede": "Cefla (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_035",
+      "tipo": "V",
+      "camera": {
+        "x": 67,
+        "z": 24
+      },
+      "direzione_gradi": 60,
+      "zona": "VERNICIATURA, muro est",
+      "vede": "armadi rossi, banchi, orologio, estintore, uscita di emergenza; a sinistra blocco grigio della linea Cefla",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_036",
+      "tipo": "V",
+      "camera": {
+        "x": 68.5,
+        "z": 22.5
+      },
+      "direzione_gradi": 0,
+      "zona": "VERNICIATURA, estremita' est",
+      "vede": "pulpito Cefla con schermo blu, armadi rossi, rastrelliera carta abrasiva",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_037",
+      "tipo": "V",
+      "camera": {
+        "x": 69.5,
+        "z": 20
+      },
+      "direzione_gradi": 330,
+      "zona": "corridoio lungo il muro est",
+      "vede": "pannelli grigi con maniglie (forno/robot), corridoio buio verso il magazzino",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_038",
+      "tipo": "V",
+      "camera": {
+        "x": 68,
+        "z": 22.8
+      },
+      "direzione_gradi": 270,
+      "zona": "corridoio z 22.5 (verniciatura)",
+      "vede": "M15 mixer con due cappe e semaforo, latte di vernice, pannelli del forno a destra, corridoio lungo verso ovest fino al soppalco",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_039",
+      "tipo": "V",
+      "camera": {
+        "x": 62.5,
+        "z": 30
+      },
+      "direzione_gradi": 225,
+      "zona": "CARTEGGIATURA est",
+      "vede": "fianco grigio con etichetta gialla (EMC), sezionatrice verticale e finestre in fondo (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_040",
+      "tipo": "V",
+      "camera": {
+        "x": 63,
+        "z": 33.5
+      },
+      "direzione_gradi": 240,
+      "zona": "FALEGNAMERIA est",
+      "vede": "M09 sezionatrice verticale contro il muro sud, pannelli in piedi, carrelli, M23 levigatrice verde a destra",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_041",
+      "tipo": "V",
+      "camera": {
+        "x": 62.5,
+        "z": 28.6
+      },
+      "direzione_gradi": 90,
+      "zona": "CARTEGGIATURA est",
+      "vede": "M12 EMC Luc line con piano di carico, muro in blocchi dietro, banco da lavoro",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_042",
+      "tipo": "V",
+      "camera": {
+        "x": 60.5,
+        "z": 38
+      },
+      "direzione_gradi": 160,
+      "zona": "FALEGNAMERIA SE, porta sud x 62",
+      "vede": "muletto elettrico bianco, porta aperta: fuori recinzione e cancello verde; sezionatrice verticale dietro",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_043",
+      "tipo": "V",
+      "camera": {
+        "x": 60,
+        "z": 37.5
+      },
+      "direzione_gradi": 230,
+      "zona": "FALEGNAMERIA SE",
+      "vede": "sedile del muletto, M09 sezionatrice verticale, pannelli in piedi",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_044",
+      "tipo": "V",
+      "camera": {
+        "x": 62,
+        "z": 40.6
+      },
+      "direzione_gradi": 180,
+      "zona": "porta sud x 62",
+      "vede": "uscita (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_045",
+      "tipo": "V",
+      "camera": {
+        "x": 70.5,
+        "z": 42.5
+      },
+      "direzione_gradi": 45,
+      "zona": "esterno SE",
+      "vede": "muro del locale tecnico con finestra a lamelle e porta rosa (scancio generale), baracca con tetto curvo, cabina in cemento a destra",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_046",
+      "tipo": "V",
+      "camera": {
+        "x": 72.5,
+        "z": 42
+      },
+      "direzione_gradi": 60,
+      "zona": "esterno SE",
+      "vede": "baracca in legno con tetto in lamiera, alberi, cabina",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_047",
+      "tipo": "V",
+      "camera": {
+        "x": 73.5,
+        "z": 40.5
+      },
+      "direzione_gradi": 20,
+      "zona": "cortile est",
+      "vede": "E06 silo con scala e porta, strada interna verso nord, alberi",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_048",
+      "tipo": "V",
+      "camera": {
+        "x": 72,
+        "z": 39
+      },
+      "direzione_gradi": 0,
+      "zona": "cortile est",
+      "vede": "silo ravvicinato, muro scuro, cartello 'ricevimento ->'",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_049",
+      "tipo": "V",
+      "camera": {
+        "x": 68,
+        "z": 43.5
+      },
+      "direzione_gradi": 270,
+      "zona": "fascia sud",
+      "vede": "facciata sud con finestre a lamelle, porta SE aperta, cassone blu e furgone bianco (E09), pini oltre la strada",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_050",
+      "tipo": "V",
+      "camera": {
+        "x": 62,
+        "z": 41.5
+      },
+      "direzione_gradi": 350,
+      "zona": "porta sud x 62",
+      "vede": "ingresso in falegnameria: pannelli in piedi, rastrelliere a sbalzo",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_051",
+      "tipo": "V",
+      "camera": {
+        "x": 61.5,
+        "z": 38.5
+      },
+      "direzione_gradi": 330,
+      "zona": "FALEGNAMERIA SE",
+      "vede": "M10 deposito pannelli, rastrelliere a sbalzo in fondo, muletto bianco",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_052",
+      "tipo": "V",
+      "camera": {
+        "x": 58.5,
+        "z": 36.5
+      },
+      "direzione_gradi": 270,
+      "zona": "FALEGNAMERIA",
+      "vede": "pannelli appoggiati, toupie, macchine (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_053",
+      "tipo": "V",
+      "camera": {
+        "x": 57.5,
+        "z": 36
+      },
+      "direzione_gradi": 280,
+      "zona": "FALEGNAMERIA",
+      "vede": "M26 macchina a colonna verde, pannelli in piedi",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_054",
+      "tipo": "V",
+      "camera": {
+        "x": 57,
+        "z": 34.5
+      },
+      "direzione_gradi": 270,
+      "zona": "FALEGNAMERIA",
+      "vede": "M08 squadratrice Altendorf verde in primo piano, toupie turchese a sinistra, rastrelliere gialle, Biesse in fondo a sinistra",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_055",
+      "tipo": "V",
+      "camera": {
+        "x": 50,
+        "z": 33.5
+      },
+      "direzione_gradi": 320,
+      "zona": "FALEGNAMERIA / CARTEGGIATURA",
+      "vede": "M22 Brandt, macchina verde, rastrelliera a destra",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_056",
+      "tipo": "V",
+      "camera": {
+        "x": 48,
+        "z": 32
+      },
+      "direzione_gradi": 30,
+      "zona": "CARTEGGIATURA",
+      "vede": "rastrelliera a sbalzo gialla contro parete scura, macchina verde",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_057",
+      "tipo": "V",
+      "camera": {
+        "x": 46,
+        "z": 33
+      },
+      "direzione_gradi": 250,
+      "zona": "FALEGNAMERIA",
+      "vede": "carrello (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_058",
+      "tipo": "V",
+      "camera": {
+        "x": 43,
+        "z": 32
+      },
+      "direzione_gradi": 180,
+      "zona": "FALEGNAMERIA",
+      "vede": "M06 Casolin con riquadro arancio, finestre del muro sud",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_059",
+      "tipo": "V",
+      "camera": {
+        "x": 41,
+        "z": 33.5
+      },
+      "direzione_gradi": 270,
+      "zona": "FALEGNAMERIA",
+      "vede": "mosso",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_060",
+      "tipo": "V",
+      "camera": {
+        "x": 39,
+        "z": 34
+      },
+      "direzione_gradi": 280,
+      "zona": "FALEGNAMERIA / LABORATORIO",
+      "vede": "Biesse bianco-verdi (M02/M04), tavolo, carrelli",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_061",
+      "tipo": "V",
+      "camera": {
+        "x": 35,
+        "z": 34
+      },
+      "direzione_gradi": 250,
+      "zona": "FALEGNAMERIA",
+      "vede": "pannelli, carrelli, finestre sud",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_062",
+      "tipo": "V",
+      "camera": {
+        "x": 30,
+        "z": 33.5
+      },
+      "direzione_gradi": 330,
+      "zona": "LABORATORIO",
+      "vede": "M01/M02 Biesse Rover, banco verde, soppalco con ringhiera gialla in fondo a sinistra",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_063",
+      "tipo": "V",
+      "camera": {
+        "x": 28.5,
+        "z": 32.5
+      },
+      "direzione_gradi": 0,
+      "zona": "LABORATORIO",
+      "vede": "Biesse Rover ravvicinato, righe gialle a terra",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_064",
+      "tipo": "V",
+      "camera": {
+        "x": 28,
+        "z": 33.5
+      },
+      "direzione_gradi": 270,
+      "zona": "LABORATORIO",
+      "vede": "banco da lavoro con attrezzi",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_065",
+      "tipo": "V",
+      "camera": {
+        "x": 24,
+        "z": 33
+      },
+      "direzione_gradi": 270,
+      "zona": "FALEGNAMERIA",
+      "vede": "carrelli (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_066",
+      "tipo": "V",
+      "camera": {
+        "x": 14,
+        "z": 25.5
+      },
+      "direzione_gradi": 20,
+      "zona": "IMBALLAGGIO / sotto il soppalco",
+      "vede": "S1 soppalco con ringhiera gialla, porte nel blocco sotto, scaffali bianchi, stoccatore verde, pannelli su bancali",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_067",
+      "tipo": "V",
+      "camera": {
+        "x": 8,
+        "z": 27
+      },
+      "direzione_gradi": 270,
+      "zona": "corridoio ovest",
+      "vede": "finestra su un ufficio illuminato (mosso)",
+      "confidenza": "bassa"
+    },
+    {
+      "id": "f_068",
+      "tipo": "V",
+      "camera": {
+        "x": 15,
+        "z": 27
+      },
+      "direzione_gradi": 0,
+      "zona": "IMBALLAGGIO",
+      "vede": "soppalco, pilastro scuro, stoccatore verde, scaffali, pile di pannelli",
+      "confidenza": "media"
+    },
+    {
+      "id": "f_069",
+      "tipo": "V",
+      "camera": {
+        "x": 11,
+        "z": 21
+      },
+      "direzione_gradi": 0,
+      "zona": "sotto il soppalco",
+      "vede": "ringhiera gialla del soppalco, parete antracite con porta illuminata e finestra (area break)",
+      "confidenza": "media"
+    }
+  ]
+}

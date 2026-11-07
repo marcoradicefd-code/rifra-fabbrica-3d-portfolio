@@ -1,0 +1,33 @@
+COME NASCE UNA CUCINA RiFRA — fabbrica in 3D
+=============================================
+
+COME SI APRE
+1. Estrai lo zip in una cartella qualsiasi.
+2. Fai doppio clic su «come-nasce-una-cucina-rifra-3d.html» (parte in italiano)
+   oppure su «come-nasce-una-cucina-rifra-3d-en.html» (parte in inglese).
+   Si apre nel browser e funziona anche senza internet: è un file unico, con dentro tutto
+   (grafica 3D, testi, caratteri). In tutti e due il pulsante in alto a destra
+   («English» / «Italiano») cambia lingua.
+
+BROWSER CONSIGLIATI
+Google Chrome o Microsoft Edge aggiornati (va bene anche Safari 17 o più recente).
+Serve un computer con scheda grafica che supporti WebGL 2: qualunque Mac o PC degli ultimi 6–7 anni.
+Si vede al meglio a schermo intero (F11 su Windows, Ctrl+Cmd+F su Mac) e a 1920 × 1080 o più.
+
+COME SI USA
+- «Avvia il giro»: racconto automatico dei 12 passaggi, dal progetto all'imballo.
+- Numeri sulla fabbrica o pulsanti in basso: si va direttamente a un passaggio.
+- Trascina per ruotare la vista, rotellina o due dita per avvicinarti.
+- «Metti il tetto» / «Dettaglio»: tetto e livello di qualità (se il computer è lento, scegli una qualità più bassa).
+- «English» / «Italiano»: cambia la lingua di testi, pulsanti ed etichette.
+- «opz.» sulla fabbrica: la verniciatura manuale, facoltativa, fuori dal giro dei 12 passaggi.
+
+MODALITÀ FIERA (CHIOSCO)
+Apri il file e aggiungi «?kiosk=1» alla fine dell'indirizzo nella barra del browser, poi premi Invio.
+Esempio: file:///…/come-nasce-una-cucina-rifra-3d.html?kiosk=1
+Il giro riparte da solo; la rotazione libera è disattivata.
+
+NOTE
+- Non va installato nulla e non manda dati a nessuno: nessuna richiesta a internet.
+- Se lo schermo resta grigio: aggiorna il browser o prova con Chrome.
+- Materiale riservato di RiFRA: non pubblicarlo senza autorizzazione.

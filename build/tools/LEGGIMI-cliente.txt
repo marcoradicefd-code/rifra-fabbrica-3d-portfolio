@@ -1,0 +1,46 @@
+COME NASCE UNA CUCINA RiFRA — fabbrica in 3D
+=============================================
+
+CONTENUTO
+- come-nasce-una-cucina-rifra-3d.html     pagina 3D interattiva, parte in italiano
+- come-nasce-una-cucina-rifra-3d-en.html  stessa pagina, parte in inglese
+- Rifra-FABBRICA-3D-codice.zip            codice sorgente del progetto (per chi lo sviluppa)
+
+COME SI APRE LA PAGINA
+Doppio clic su uno dei due file .html: si apre nel browser e funziona anche senza internet.
+È un file unico, con dentro tutto (grafica 3D, testi, caratteri). Non va installato nulla.
+In alto a destra il pulsante «English» / «Italiano» cambia lingua.
+
+Browser consigliati: Google Chrome o Microsoft Edge aggiornati (va bene anche Safari 17 o più recente).
+Serve un computer con scheda grafica che supporti WebGL 2: qualunque Mac o PC degli ultimi 6–7 anni.
+Si vede al meglio a schermo intero (F11 su Windows, Ctrl+Cmd+F su Mac) e a 1920 × 1080 o più.
+
+COME SI USA
+- «Avvia il giro»: racconto automatico dei 12 passaggi, dall'ufficio tecnico al camion in partenza.
+- Numeri sulla fabbrica o pulsanti in basso: si va direttamente a un passaggio.
+- «opz.» sulla fabbrica: la verniciatura manuale, facoltativa, fuori dal giro.
+- Trascina per ruotare la vista, rotellina o due dita per avvicinarti.
+- «Metti il tetto» / «Dettaglio»: tetto e livello di qualità (se il computer è lento, scegli un dettaglio più basso).
+
+MODALITÀ FIERA (CHIOSCO)
+Apri il file e aggiungi «?kiosk=1» alla fine dell'indirizzo nella barra del browser, poi premi Invio.
+Esempio: file:///…/come-nasce-una-cucina-rifra-3d.html?kiosk=1
+Il giro riparte da solo; la rotazione libera è disattivata.
+
+CODICE SORGENTE
+Rifra-FABBRICA-3D-codice.zip contiene il progetto (pagina three.js, strumenti, documenti).
+Si parte da README.md. Per rigenerare le pagine serve Node.js: le istruzioni sono nel README.
+
+NOTE
+- La pagina non manda dati a nessuno e non fa richieste a internet.
+- Se lo schermo resta grigio: aggiorna il browser o prova con Chrome.
+- Ricostruzione disegnata dal codice sulla base di pianta, foto e viste aeree: alcune parti sono illustrative.
+
+
+HOW A RiFRA KITCHEN IS MADE — 3D factory (English)
+---------------------------------------------------
+- come-nasce-una-cucina-rifra-3d-en.html opens in English, come-nasce-una-cucina-rifra-3d.html in Italian;
+  the «English» / «Italiano» button (top right) switches language.
+- Double-click the file: it opens in the browser and works offline (Chrome or Edge recommended).
+- Trade-fair mode: add «?kiosk=1» to the end of the address.
+- Rifra-FABBRICA-3D-codice.zip is the source code; start from README.md.

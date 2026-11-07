@@ -1,0 +1,44 @@
+# Repository del codice di «Come nasce una cucina RiFRA». Restano FUORI (ma sull'SSD del progetto) i file pesanti, quelli rigenerabili
+# e quelli che non si possono ridistribuire. Vedi README.md, «Cosa non c'è nel repository».
+
+# media, render, prove, archivio
+FOTO/
+archivio/
+build/qc/
+*.mp4
+*.mov
+CONSEGNA-3D-*/
+blender/render/
+blender/comandi/
+blender/titoli/png/
+blender/titoli/motion-png/
+blender/titoli/motion-prova/
+
+# rigenerabili dagli script (esporta-scena.js, esporta-animazione.js, costruisci.py)
+blender/scena/
+blender/anim/*.bin
+blender/anim/*.json
+blender/*.blend
+blender/*.blend1
+__pycache__/
+
+# musica con licenza Pixabay: non si ridistribuisce da sola (vedi blender/musica/LICENZA.md)
+blender/musica/*.mp3
+
+# materiale fotografico del cliente e foto di persone (privacy): resta sull'SSD
+ricerca/foto/
+ricerca/fotogrammi/
+ricerca/zoom/
+ricerca/provini/
+ricerca/tmp_tile/
+ricerca/video-giochi/
+ricerca/esterno/
+ricerca/design-system/
+ricerca/persone-rifra/*.jpg
+ricerca/persone-rifra/*.jpeg
+ricerca/persone-rifra/*.webp
+ricerca/persone-rifra/*.png
+
+# dipendenze e sistema
+node_modules/
+.DS_Store
