@@ -1,3 +1,5 @@
+[English](README.en.md) · **Italiano**
+
 # Come nasce una cucina RiFRA — fabbrica in 3D
 
 Ricostruzione 3D animata e interattiva della fabbrica di cucine **RiFRA** di Gerno di Lesmo (MB). Si percorrono le tappe della produzione di una cucina tra macchine, reparti e persone al lavoro.
